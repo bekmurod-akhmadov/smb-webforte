@@ -48,7 +48,7 @@ class AppServiceProvider extends ServiceProvider
         });
         LanguageSwitch::configureUsing(function (LanguageSwitch $switch) {
             $switch
-                ->locales(['ru','uz','en']);
+                ->locales(['ru','en']);
         });
 
 //        TranslatableTabs::configureUsing(function (TranslatableTabs $component) {
