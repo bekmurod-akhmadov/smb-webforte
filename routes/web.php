@@ -21,8 +21,8 @@ Livewire::setScriptRoute(function ($handle) {
 
 Route::group(
     [
-        'prefix' => LaravelLocalization::setLocale(),
-        'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath', 'throttle:50,1'],
+//        'prefix' => LaravelLocalization::setLocale(),
+        'middleware' => ['throttle:50,1'],
     ],
     function () {
         Route::get('/', [HomeController::class, 'index'])->name('home');

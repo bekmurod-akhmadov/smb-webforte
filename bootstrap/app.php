@@ -1,6 +1,5 @@
 <?php
 
-use BezhanSalleh\FilamentExceptions\FilamentExceptions;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
@@ -19,11 +18,11 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withMiddleware(function (Middleware $middleware) {
         $middleware->alias([
             /**** OTHER MIDDLEWARE ALIASES ****/
-            'localize' => LaravelLocalizationRoutes::class,
-            'localizationRedirect' => LaravelLocalizationRedirectFilter::class,
-            'localeSessionRedirect' => LocaleSessionRedirect::class,
-            'localeCookieRedirect' => LocaleCookieRedirect::class,
-            'localeViewPath' => LaravelLocalizationViewPath::class,
+//            'localize' => LaravelLocalizationRoutes::class,
+//            'localizationRedirect' => LaravelLocalizationRedirectFilter::class,
+//            'localeSessionRedirect' => LocaleSessionRedirect::class,
+//            'localeCookieRedirect' => LocaleCookieRedirect::class,
+//            'localeViewPath' => LaravelLocalizationViewPath::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {

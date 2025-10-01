@@ -51,17 +51,17 @@ class AppServiceProvider extends ServiceProvider
                 ->locales(['ru','uz','en']);
         });
 
-        TranslatableTabs::configureUsing(function (TranslatableTabs $component) {
-            $component
-                ->localesLabels([
-                    'ru' => __('app.label.ru'),
-                    'uz' => __('app.label.uz'),
-                    'en' => __('app.label.en'),
-                ])
-                ->locales(['uz', 'ru', 'en'])
-                ->addDirectionByLocale()
-                ->addEmptyBadgeWhenAllFieldsAreEmpty(emptyLabel: __('app.label.empty'))
-                ->addSetActiveTabThatHasValue();
-        });
+//        TranslatableTabs::configureUsing(function (TranslatableTabs $component) {
+//            $component
+//                ->localesLabels([
+//                    'ru' => __('app.label.ru'),
+//                    'uz' => __('app.label.uz'),
+//                    'en' => __('app.label.en'),
+//                ])
+//                ->locales(['uz', 'ru', 'en'])
+//                ->addDirectionByLocale()
+//                ->addEmptyBadgeWhenAllFieldsAreEmpty(emptyLabel: __('app.label.empty'))
+//                ->addSetActiveTabThatHasValue();
+//        });
     }
 }

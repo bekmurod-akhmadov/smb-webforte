@@ -62,8 +62,7 @@ class SiteTranslationsResource extends Resource
                                     ->label(__('app.label.value'))
                                     ->required()
                                     ->rows(6)
-                                    ->helperText(__('app.helper.value'))
-                                    ->translatableTabs(),
+                                    ->helperText(__('app.helper.value')),
                             ]),
                     ]),
             ]);

@@ -4,9 +4,320 @@
 <body>
     <!-- WRAPPER -->
     <div class="wrapper">
-        <main>
-            @yield('content')
-        </main>
+      @yield('content')
+    </div>
+
+
+    <!-- modal -->
+    <div class="profile-modal" id="cartax">
+      <div class="modal_content">
+        <span class="exit"><img src="/images/close.svg" alt=""></span>
+        <div class="modal_title">Все о картах</div>
+        <div class="modal_content_info">
+
+          <div class="bonus_section">
+            <h2 class="bonus_section__title">ИНФО ЗАГОЛОВОК</h2>
+            <ul class="list_bullets">
+              <li>Оплатить бонусами можно до 50% от стоимости покупки</li>
+              <li>Бонусы от покупки можно списать спустя 19 дней после покупки на сайте</li>
+              <li>1000 приветственных бонусов за регистрацию начисляются через 7 дней</li>
+              <li>Списание бонусов недоступно для товаров категории UNDERWEAR и ART</li>
+            </ul>
+          </div>
+
+          <div class="bonus_section">
+            <h2 class="bonus_section__title">ИНФО ЗАГОЛОВОК</h2>
+            <ul class="list_bullets">
+              <li>6 месяцев с момента покупки. Далее бонусы сгорают. Приветственные 1000 бонусов действуют
+              </li>
+              <li>3 месяца с момента начисления. Далее бонусы сгорают</li>
+              <li>При возврате товара бонусы, начисленные за покупку, списываются</li>
+            </ul>
+          </div>
+
+          <div class="bonus_section">
+            <h2 class="bonus_section__title">УРОВНИ НАКОПЛЕНИЯ КЭШБЕКА</h2>
+            <p class="text_16">
+              Сумма накапливается за всю историю покупок, начиная с момента регистрации в программе
+              лояльности.
+            </p>
+            <p class="text_16">3 уровня:</p>
+            <ul class="list_bullets">
+              <li>«QUEEN» (от 15 000 руб до 49 999 руб) – 3% кэшбэк от суммы покупки</li>
+              <li>«FASHIONABLE QUEEN» (от 50 000 руб до 99 999 руб) – 5% кэшбэк</li>
+              <li>«EXTREMELY SEXY FASHIONABLE QUEEN» (от 100 000 руб) – 10% кэшбэк</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="profile-modal" id="politic">
+      <div class="modal_content">
+        <span class="exit"><img src="/images/close.svg" alt=""></span>
+        <div class="modal_title">Как получить бонусы</div>
+        <div class="modal_content_info">
+          <div class="bonus_section">
+            <h2 class="bonus_section__title">ПРИНЦИП РАБОТЫ ПРОГРАММЫ</h2>
+            <p class="text_16">
+              Бонусная программа представляет собой систему накопления баллов, которые начисляются за покупки.
+              После совершения покупки бонусы зачисляются автоматически через 14 дней и автоматически
+              становятся доступными на счету. Каждый накопленный балл эквивалентен сумме рубля и может быть
+              использован для оплаты до 30% от стоимости товаров и услуг.
+            </p>
+          </div>
+
+          <div class="bonus_section">
+            <h3 class="bonus_section__subtitle">СТАРТОВЫЕ БОНУСЫ</h3>
+            <p class="text_16">
+              Регистрируясь в программе при покупке выше 1000 рублей, пользователь получает стартовые бонусы.
+              Также бонусы начисляются при создании учетной записи или оформлении карты участника. Важно
+              отметить, что условием начисления может быть подтверждение номера телефона.
+            </p>
+          </div>
+
+          <div class="bonus_section">
+            <h3 class="bonus_section__subtitle">НАЧИСЛЕНИЕ БОНУСОВ</h3>
+            <p class="text_16">
+              Первые покупки приносят 5% бонусов от потраченной суммы. Все прочие покупки начисляются в
+              соответствии с уровнем пользователя.
+            </p>
+          </div>
+
+          <div class="bonus_section">
+            <h3 class="bonus_section__subtitle">СИСТЕМА УРОВНЕЙ</h3>
+            <p class="text_16">
+              Накопительная программа включает три уровня привилегий:
+            </p>
+            <ul class="list_bullets">
+              <li>Базовый уровень (до 24 999 рублей) — 5% бонусов;</li>
+              <li>Серебряный уровень (25 000 — 99 999 рублей) — 7% бонусов;</li>
+              <li>Золотой уровень (от 100 000 рублей и выше) — 10% бонусов.</li>
+            </ul>
+          </div>
+
+          <div class="bonus_section">
+            <h3 class="bonus_section__subtitle">ПРАВИЛА ИСПОЛЬЗОВАНИЯ</h3>
+            <p class="text_16">
+              Применение бонусов возможно для оплаты до 30% от стоимости покупки, за исключением акционных
+              товаров, персонализированных сертификатов и подарочных карт.
+              Бонусы не подлежат обмену на наличные средства и не начисляются за доставку.
+            </p>
+          </div>
+
+          <div class="bonus_section">
+            <h3 class="bonus_section__subtitle">ПРОВЕРКА БАЛАНСА</h3>
+            <p class="text_16">
+              Отследить баланс бонусов можно через личный кабинет: "Просмотр операций начислений/списаний", а
+              также в чеке после покупки.
+            </p>
+          </div>
+
+          <div class="bonus_section">
+            <h3 class="bonus_section__subtitle">ЧТО ТАКОЕ БОНУСНАЯ СИСТЕМА</h3>
+            <p class="text_16">
+              Бонусная система — это удобный способ накопления вознаграждений за покупки. Накопленные баллы
+              действуют 14 дней с момента начисления, далее могут быть потрачены на следующие покупки.
+            </p>
+          </div>
+
+          <div class="bonus_section">
+            <h3 class="bonus_section__subtitle">ПРИВЕТСТВЕННЫЕ НАКОПИТЕЛЬНЫЕ БАЛЛЫ</h3>
+            <p class="text_16">
+              При регистрации на сайте или в момент завершения первой покупки вы можете получить
+              приветственные бонусы, которые будут доступны в разделе "Мои бонусы".
+            </p>
+          </div>
+
+          <div class="bonus_section">
+            <h3 class="bonus_section__subtitle">БОНУСЫ ЗА ПЕРВУЮ ПОКУПКУ</h3>
+            <p class="text_16">
+              При первой покупке начисляется фиксированный процент бонусов — обычно 5% от суммы покупки. Этот
+              процент может быть временно увеличен в акциях.
+            </p>
+          </div>
+
+          <div class="bonus_section">
+            <h3 class="bonus_section__subtitle">УРОВНИ БОНУСОВ</h3>
+            <p class="text_16">
+              Участник программы может переходить между уровнями в зависимости от общей суммы покупок за год.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="profile-modal" id="login">
+      <div class="modal_content">
+        <div class="step step_phone ">
+          <span class="exit"><img src="/images/close.svg" alt=""></span>
+          <div class="modal_title">Войти или зарегистрироваться</div>
+          <div class="modal_subtitle">Позвоним или пришлём SMS. Введи последние четыре цифры номера телефона или
+            код
+            из SMS-сообщения</div>
+
+          <form class="modal_form">
+            <label class="modal_input">
+              <span class="modal_input-title">номер телефона*</span>
+              <input type="tel" id="phone" placeholder="+7 (___) ___-__-__" />
+            </label>
+            <label class="form_bottom">
+                        <span class="custom_checkbox">
+                            <input type="checkbox" class="custom_checkbox_input" />
+                        </span>
+            </label>
+            <label class="form_bottom">
+                        <span class="custom_checkbox">
+                            <input type="checkbox" class="custom_checkbox_input" />
+                            <span class="custom_checkbox_box"></span>
+                        </span>
+              <p>Нажимая «Получить код», я принимаю условия Пользовательского соглашения и даю <a
+                  href="#">Согласие на обработку персональных данных </a> в соответствии с <a
+                  href="#">Политикой конфиденциальности</a></p>
+            </label>
+            <div class="form_buttons">
+              <button class="button btn_phone_next" disabled>получить код</button>
+              <a href="#" class="button modal_link">войти по электронной почте</a>
+            </div>
+            <span class="modal_bottom_text">
+                        Впервые с нами? <a href="#" class="modal_register">Зарегистрироваться</a>
+                    </span>
+          </form>
+        </div>
+
+        <!-- Step 2: SMS -->
+        <div class="step step_sms hide">
+          <span class="exit"><img src="/images/close.svg" alt=""></span>
+          <div class="modal_title">номер получателя +7 (199) 999-99-99</div>
+          <div class="modal_subtitle">Введите последние четыре цифры
+            номера телефона или код из SMS-сообщения.</div>
+          <div class="sms_inputs">
+            <input type="text" maxlength="1">
+            <input type="text" maxlength="1">
+            <input type="text" maxlength="1">
+            <input type="text" maxlength="1">
+          </div>
+          <div class="form_buttons">
+            <button class="button btn_sms_wrong">Отправить код повтороно</button>
+            <a href="#" class="button modal_link btn_back_phone">назад</a>
+          </div>
+        </div>
+
+        <!-- Step 3: Email -->
+        <div class="step step_email hide">
+          <span class="exit"><img src="/images/close.svg" alt=""></span>
+          <div class="modal_title">Войти в личный кабинет</div>
+          <form class="modal_form">
+            <label class="modal_input">
+              <span class="modal_input-title">Email*</span>
+              <input type="email" id="email" placeholder="you@example.com" required />
+            </label>
+            <label class="modal_input">
+              <span class="modal_input-title">пароль*</span>
+              <input type="password" id="passowrd" placeholder="Введите пароль" required />
+              <span class="eye ">
+                            <img src="/images/eye.svg" alt="" class=" ">
+                        </span>
+
+            </label>
+            <div class="modal_inputs">
+              <label class="form_bottom">
+                            <span class="custom_checkbox">
+                                <input type="checkbox" class="custom_checkbox_input" name="passwords">
+                                <span class="custom_checkbox_box"></span>
+                            </span>
+                <p>Запомнить пароль</p>
+              </label>
+              <a href="#" class="modal_link">Забыли пароль?</a>
+            </div>
+            <div class="form_buttons">
+              <button class="button" disabled>Войти в личный кабинет</button>
+              <a href="#" class="button modal_link btn_back_email">войти по номеру телефона</a>
+            </div>
+
+          </form>
+          <span class="modal_bottom_text">
+                    Впервые с нами? <a href="#" class="modal_register">Зарегистрироваться</a>
+                </span>
+        </div>
+
+        <!-- Step 4: Error -->
+        <div class="step step_error hide">
+
+          <div class="modal_title">Если хочешь идти, иди...</div>
+          <div class="modal_subtitle">Но знай, что мы уже скучаем</div>
+          <div class="form_buttons">
+            <button class="button btn_back_error">Остаться</button>
+            <a href="#" class="button modal_link">уйти</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="profile-modal" id="registerModal">
+      <div class="modal_content">
+        <span class="exit"><img src="/images/close.svg" alt=""></span>
+        <div class="modal_title">Зарегистрироваться</div>
+        <div class="modal_subtitle">Позвоним или пришлём SMS. Введи последние четыре цифры номера телефона или код
+          из SMS-сообщения</div>
+        <form class="modal_form">
+          <label class="modal_input">
+            <span class="modal_input-title">Имя*</span>
+            <input type="text" placeholder="Ввести имя" name="first_name" required />
+          </label>
+          <label class="modal_input">
+            <span class="modal_input-title">фамилия*</span>
+            <input type="text" placeholder="Ввести фамилию" name="last_name" required />
+          </label>
+          <label class="modal_input">
+            <span class="modal_input-title">отчество</span>
+            <input type="text" placeholder="Ввести отчество" name="last_name" />
+          </label>
+          <label class="modal_input">
+            <span class="modal_input-title">E-mail*</span>
+            <input type="email" placeholder="Ввести e-mail" name="email" />
+          </label>
+          <label class="modal_input">
+            <span class="modal_input-title">номер телефона*</span>
+            <input type="tel" placeholder="Ввести e-mail" name="phone" />
+          </label>
+          <label class="modal_input">
+            <span class="modal_input-title">пароль*</span>
+            <input type="passowrd" placeholder="Придумай пароль" name="pasword" />
+            <span class="eye">
+                        <img src="/images/eye.svg" alt="" class=" ">
+                    </span>
+          </label>
+          <label class="modal_input">
+            <span class="modal_input-title">подтвердите пароль*</span>
+            <input type="passowrd" placeholder="Введи пароль еще раз" name="is_password" />
+            <span class="eye">
+                        <img src="/images/eye.svg" alt="" class=" ">
+                    </span>
+          </label>
+          <label class="form_bottom">
+                    <span class="custom_checkbox">
+                        <input type="checkbox" class="custom_checkbox_input" name="checkbox" />
+                        <span class="custom_checkbox_box"></span>
+                    </span>
+            <p>Я согласен(-на) на получение рекламно-информационной рассылки</p>
+          </label>
+          <label class="form_bottom">
+                    <span class="custom_checkbox">
+                        <input type="checkbox" class="custom_checkbox_input" name="checkbox" />
+                        <span class="custom_checkbox_box"></span>
+                    </span>
+            <p>Я согласен(-на) с <a
+                href="https://864109.selcdn.ru/irnby.com/DOCUMENTS/%D0%9F%D0%BE%D0%BB%D0%B8%D1%82%D0%B8%D0%BA%D0%B0%20%D0%BA%D0%BE%D0%BD%D1%84%D0%B8%D0%B4%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8%20IRNBY.pdf">политикой
+                конфиденциальности</a>  и договором оферты</p>
+          </label>
+          <div class="form_buttons">
+            <button class="button btn_phone_next" disabled>Зарегистрироваться</button>
+          </div>
+          <span class="modal_bottom_text">
+                    Вы уже с нами? <a href="#login" class="modal_login">Авторизоваться</a>
+                </span>
+        </form>
+      </div>
     </div>
 </body>
 </html>

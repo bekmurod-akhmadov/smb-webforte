@@ -61,16 +61,12 @@ class TextBlockResource extends Resource
                                 CuratorPicker::make('image')
                                     ->label(__('app.label.main_image')),
 
-                                TranslatableTabs::make('translations')
-                                    ->schema([
-                                        Forms\Components\TextInput::make('title')
-                                            ->label(__('app.label.title'))
-                                            ->required(),
+                                Forms\Components\TextInput::make('title')
+                                    ->label(__('app.label.title'))
+                                    ->required(),
 
-                                        Forms\Components\RichEditor::make('content')
-                                            ->label(__('app.label.content')),
-
-                                    ]),
+                                Forms\Components\RichEditor::make('content')
+                                    ->label(__('app.label.content')),
 
                                 Forms\Components\Toggle::make('status')
                                     ->label(__('app.label.status'))

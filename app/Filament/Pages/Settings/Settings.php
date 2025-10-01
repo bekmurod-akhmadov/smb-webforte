@@ -42,21 +42,18 @@ class Settings extends BaseSettings
                     Forms\Components\Tabs\Tab::make(__('app.label.tab_seo'))
                         ->schema([
 
-                            TranslatableTabs::make('seo_translations')
-                                ->schema([
-                                    Forms\Components\TextInput::make('seo.title')
-                                        ->label(__('app.label.seo_title'))
-                                        ->required(),
+                            Forms\Components\TextInput::make('seo.title')
+                                ->label(__('app.label.seo_title'))
+                                ->required(),
 
-                                    Forms\Components\Textarea::make('seo.description')
-                                        ->label(__('app.label.seo_description'))
-                                        ->rows(4)
-                                        ->required(),
+                            Forms\Components\Textarea::make('seo.description')
+                                ->label(__('app.label.seo_description'))
+                                ->rows(4)
+                                ->required(),
 
-                                    Forms\Components\Textarea::make('seo.keywords')
-                                        ->label(__('app.label.seo_keywords'))
-                                        ->rows(4),
-                                ]),
+                            Forms\Components\Textarea::make('seo.keywords')
+                                ->label(__('app.label.seo_keywords'))
+                                ->rows(4),
 
                             Forms\Components\FileUpload::make('seo.og_image')
                                 ->label(__('app.label.seo_og_image'))
