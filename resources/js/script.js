@@ -1,8 +1,21 @@
 // ==== Импорты библиотек ====
 
-// Swiper
+// Swiper core и модули
 import Swiper from 'swiper';
-import 'swiper/css/bundle';
+import {
+  Navigation,
+  Pagination,
+  Autoplay,
+  Mousewheel,
+  EffectFade,
+} from 'swiper/modules';
+
+// Стили Swiper
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/autoplay';
+import 'swiper/css/effect-fade';
 
 // jQuery
 import $ from 'jquery';
@@ -176,55 +189,54 @@ function initMobileMenuButtons() {
 
 // ==================== SWIPER FUNCTIONS ====================
 function initializeHeroSwiper() {
-  const heroSwiperContainer = document.querySelector(".heroSwiper");
-  if (!heroSwiperContainer) return;
-
-  heroSwiper = new Swiper(".heroSwiper", {
-    slidesPerView: 1,
-    spaceBetween: 0,
-    loop: true,
-    autoplay: {
-      delay: 4000,
-      disableOnInteraction: false,
-    },
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-    speed: 800,
-    effect: "slide",
-  });
+  if (document.querySelector('.heroSwiper')) {
+    new Swiper('.heroSwiper', {
+      modules: [Navigation, Pagination, Autoplay, EffectFade],
+      slidesPerView: 1,
+      spaceBetween: 0,
+      loop: true,
+      autoplay: {
+        delay: 4000,
+        disableOnInteraction: false,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      speed: 800,
+      effect: 'slide',
+    });
+  }
 }
-//
-document.addEventListener("DOMContentLoaded", function () {
-  // Handbag Gallery Swiper
-  const handbagGallerySwiper = new Swiper(".handbag-gallery__slider", {
-    slidesPerView: 3.5,
-    spaceBetween: 4,
-    loop: true,
-    grabCursor: true,
 
-    breakpoints: {
-      320: {
-        slidesPerView: 1.3,
-        spaceBetween: 8,
-        loop: true,
+//
+document.addEventListener('DOMContentLoaded', () => {
+  if (document.querySelector('.handbag-gallery__slider')) {
+    new Swiper('.handbag-gallery__slider', {
+      modules: [Mousewheel],
+      slidesPerView: 3.5,
+      spaceBetween: 4,
+      loop: true,
+      grabCursor: true,
+      breakpoints: {
+        320: {
+          slidesPerView: 1.3,
+          spaceBetween: 8,
+        },
+        768: {
+          slidesPerView: 3.5,
+          spaceBetween: 4,
+        },
       },
-      768: {
-        slidesPerView: 3.5,
-        spaceBetween: 4,
-        loop: true,
-      },
-    },
-    mousewheel: {
-      forceToAxis: true,
-    },
-  });
+      mousewheel: { forceToAxis: true },
+    });
+  }
 });
+
 
 const children = document.querySelectorAll(".handbag-gallery__card");
 
@@ -732,11 +744,12 @@ $(document).ready(function () {
         $(".mobile-swiper").show();
 
         if (!window.mobileSwiper) {
-          window.mobileSwiper = new Swiper(".mobile-swiper", {
+          window.mobileSwiper = new Swiper('.mobile-swiper', {
+            modules: [Pagination],
             slidesPerView: 1,
             spaceBetween: 20,
             pagination: {
-              el: ".swiper-pagination",
+              el: '.swiper-pagination',
               clickable: true,
             },
             loop: true,
@@ -1006,24 +1019,27 @@ window.search = function () {
 
 // ==========================search page end ========================
 
-const swiper = new Swiper(".article_slider", {
-  slidesPerView: 2.1,
-  spaceBetween: 4,
-  loop: true,
-  grabCursor: true,
-  autoplay: {
-    delay: 3000,
-  },
-  breakpoints: {
-    0: {
-      slidesPerView: 1.3,
+if (document.querySelector('.article_slider')) {
+  new Swiper('.article_slider', {
+    modules: [Autoplay],
+    slidesPerView: 2.1,
+    spaceBetween: 4,
+    loop: true,
+    grabCursor: true,
+    autoplay: {
+      delay: 3000,
     },
-    480: {
-      slidesPerView: 2.1,
-      spaceBetween: 4,
+    breakpoints: {
+      0: {
+        slidesPerView: 1.3,
+      },
+      480: {
+        slidesPerView: 2.1,
+        spaceBetween: 4,
+      },
     },
-  },
-});
+  });
+}
 
 //  =============================== denomination page js ========================
 $(document).ready(function () {
@@ -2198,17 +2214,18 @@ $(document).ready(function () {
   });
 
   // Image slider initialization
-  $(".profile .order-card__slider").each(function () {
+  $('.order-card__slider').each(function () {
     let $this = $(this);
-
     new Swiper($this[0], {
+      modules: [Navigation],
       slidesPerView: 1,
       navigation: {
-        nextEl: $this.find(".swiper-button-next")[0],
-        prevEl: $this.find(".swiper-button-prev")[0],
+        nextEl: $this.find('.swiper-button-next')[0],
+        prevEl: $this.find('.swiper-button-prev')[0],
       },
     });
   });
+
 });
 
 // ===============================================

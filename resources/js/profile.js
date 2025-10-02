@@ -1,20 +1,27 @@
 // ==== Импорты npm-библиотек ====
 
-// Swiper
 import Swiper from 'swiper';
-import 'swiper/css/bundle';
+
+// Swiper core и модули
+import { Navigation, Pagination, Autoplay, EffectFade, Mousewheel } from 'swiper/modules';
+
+// Стили
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/autoplay';
+import 'swiper/css/effect-fade';
 
 // jQuery
 import $ from 'jquery';
 window.$ = window.jQuery = $;
 
 // Inputmask
-import Inputmask from "inputmask";
+import Inputmask from 'inputmask';
 
-// (если планируешь даты) Moment
+// Moment (если нужен)
 import moment from 'moment';
 import 'moment-timezone';
-
 
 
 window.addEventListener("scroll", function () {
@@ -77,26 +84,27 @@ function toggleDropdown(targetId) {
 }
 // Initialize Hero Swiper
 function initializeSwiper() {
-  heroSwiper = new Swiper(".heroSwiper", {
+  const heroSwiper = new Swiper('.heroSwiper', {
+    modules: [Navigation, Pagination, Autoplay, EffectFade, Mousewheel],
     slidesPerView: 1,
-    spaceBetween: 0,
     loop: true,
     autoplay: {
       delay: 4000,
       disableOnInteraction: false,
     },
     navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
     },
     pagination: {
-      el: ".swiper-pagination",
+      el: '.swiper-pagination',
       clickable: true,
     },
     speed: 800,
-    effect: "slide",
+    effect: 'slide',
   });
 }
+
 
 // -------------------- COOKIE -------------------- //
 function initCookiePopup() {
@@ -153,7 +161,8 @@ function toggleHeart(heartElement) {
 }
 // ================================== marquee-content end
 document.addEventListener("DOMContentLoaded", function () {
-  const handbagGallerySwiper = new Swiper(".handbag-gallery__slider", {
+  const handbagGallerySwiper = new Swiper('.handbag-gallery__slider', {
+    modules: [Mousewheel],
     slidesPerView: 3.5,
     spaceBetween: 15,
     loop: true,
@@ -164,15 +173,14 @@ document.addEventListener("DOMContentLoaded", function () {
       768: {
         slidesPerView: 3.5,
         spaceBetween: 15,
-        loop: true,
       },
       320: {
         slidesPerView: 1.3,
-        spaceBetween: 15,
-        loop: true,
+        spaceBetween: 8,
       },
     },
   });
+
 
   function updateSpacing() {
     const screenWidth = window.innerWidth;
@@ -516,6 +524,7 @@ $(document).ready(function () {
     let $this = $(this);
 
     new Swiper($this[0], {
+      modules: [Navigation], // 👈 без этого кнопки не заработают
       slidesPerView: 1,
       navigation: {
         nextEl: $this.find(".swiper-button-next")[0],

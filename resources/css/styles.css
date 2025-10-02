@@ -1752,8 +1752,8 @@ section {
 }
 .hero-slider .heroSwiper .swiper-button-next,
 .hero-slider .heroSwiper .swiper-button-prev {
-  width: 50px;
-  height: 50px;
+  width: 22px;
+  height: 22px;
   margin-top: -25px;
   color: #272727;
 }
