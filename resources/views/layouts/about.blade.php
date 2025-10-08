@@ -3,7 +3,7 @@
     <x-head/>
 <body>
     <!-- WRAPPER -->
-    <div class="wrapper">
+    <div class="wrapper about">
       @yield('content')
     </div>
 
@@ -85,7 +85,7 @@
 
           <div class="bonus_section">
             <h3 class="bonus_section__subtitle">СИСТЕМА УРОВНЕЙ</h3>
-            <p class="text_16">
+            <p class="text_16">s
               Накопительная программа включает три уровня привилегий:
             </p>
             <ul class="list_bullets">
@@ -316,56 +316,6 @@
                     Вы уже с нами? <a href="#login" class="modal_login">Авторизоваться</a>
                 </span>
         </form>
-      </div>
-    </div>
-    <div class="smb-modal-overlay" id="smbModalOverlay">
-      <div class="smb-modal">
-        <button class="smb-modal-close" id="smbModalClose"><svg xmlns="http://www.w3.org/2000/svg" width="14"
-                                                                height="14" viewBox="0 0 14 14" fill="none">
-            <path
-              d="M1.39916 13.3108L0.691406 12.6031L6.29141 7.00306L0.691406 1.40306L1.39916 0.695312L6.99916 6.29531L12.5992 0.695312L13.3069 1.40306L7.70691 7.00306L13.3069 12.6031L12.5992 13.3108L6.99916 7.71081L1.39916 13.3108Z"
-              fill="#1C1B1F" />
-          </svg></button>
-        <div class="smb-modal-content">
-          <h2 class="smb-modal-title">СЕКРЕТНЫЕ СКИДКИ, ЕЖЕНЕДЕЛЬНЫЕ <br> НОВОСТИ, ПИСЬМА ОТ ОСНОВАТЕЛЯ БРЕНДА
-          </h2>
-          <form id="smbSubscribeForm">
-            <div class="smb-form-group">
-              <label for="smbEmail">E-MAIL*</label>
-              <input type="email" id="smbEmail" name="email" placeholder="Введите e-mail" required>
-            </div>
-            <div class="smb-checkbox-group">
-              <div class="smb-checkbox-item">
-                <input type="checkbox" id="smbPrivacy" name="privacy" required>
-                <label for="smbPrivacy" class="input_label">Я согласен(-на) с <a href="#">Политикой
-                    конфиденциальности</a></label>
-              </div>
-              <div class="smb-checkbox-item">
-                <input type="checkbox" id="smbNewsletter" name="newsletter">
-                <label for="smbNewsletter" class="input_label">Я согласен(-на) на получение
-                  информационной
-                  <br> рассылки</label>
-              </div>
-            </div>
-            <button type="submit" class="smb-submit-btn">ПОДПИСАТЬСЯ</button>
-          </form>
-        </div>
-      </div>
-    </div>
-    <div class="smb-modal-overlay smb-success-modal" id="smbSuccessModal">
-      <div class="smb-modal">
-        <button class="smb-modal-close" id="smbSuccessModalClose"><svg xmlns="http://www.w3.org/2000/svg"
-                                                                       width="14" height="14" viewBox="0 0 14 14" fill="none">
-            <path
-              d="M1.39916 13.3108L0.691406 12.6031L6.29141 7.00306L0.691406 1.40306L1.39916 0.695312L6.99916 6.29531L12.5992 0.695312L13.3069 1.40306L7.70691 7.00306L13.3069 12.6031L12.5992 13.3108L6.99916 7.71081L1.39916 13.3108Z"
-              fill="#1C1B1F" />
-          </svg>
-        </button>
-        <button class="smb-ok-btn" id="smbOkBtn">ОК</button>
-        <div class="smb-modal-content">
-          <h2 class="smb-success-title">ПОДПИСКА ОФОРМЛЕНА</h2>
-          <p class="smb-success-message">Ты с нами – и это классно</p>
-        </div>
       </div>
     </div>
 </body>

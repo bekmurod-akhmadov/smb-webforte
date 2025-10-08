@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\SiteController;
 use Illuminate\Support\Facades\Route;
 use Livewire\Livewire;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
@@ -21,10 +22,10 @@ Livewire::setScriptRoute(function ($handle) {
 
 Route::group(
     [
-//        'prefix' => LaravelLocalization::setLocale(),
         'middleware' => ['throttle:50,1'],
     ],
     function () {
-        Route::get('/', [HomeController::class, 'index'])->name('home');
+        Route::get('/', [SiteController::class, 'index'])->name('home');
+        Route::get('/about', [SiteController::class, 'about'])->name('about');
     }
 );

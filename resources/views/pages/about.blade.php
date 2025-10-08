@@ -1,24 +1,8 @@
 @extends('layouts.main')
 
-  @section('title', 'Главная')
+@section('title', 'О нас')
 
 @section('content')
-  <!-- Top Marquee Banner -->
-  <div class="top-banner">
-    <div class="marquee-container">
-      <div class="marquee-content" id="marquee-content">
-        <span>DROP MINI MOSS 2 д 12 ч 7 м</span>
-        <span>LIMIT MINI MOSS 2 д 12 ч 7 м</span>
-        <span>LIMIT MINI MOSS 2 д 12 ч 7 м</span>
-        <span>LIMIT MINI MOSS 2 д 12 ч 7 м</span>
-        <span>LIMIT MINI MOSS 2 д 12 ч 7 м</span>
-        <span>LIMIT MINI MOSS 2 д 12 ч 7 м</span>
-        <span>LIMIT MINI MOSS 2 д 12 ч 7 м</span>
-        <span>ДРОП GOSHA 2 д 12 ч 7 м</span>
-        <span>ДРОП GOSHA 2 д 12 ч 7 м</span>
-      </div>
-    </div>
-  </div>
   <!-- Header Navigation -->
   <header class="header">
     <div class="container">
@@ -51,7 +35,7 @@
         </div>
         <!-- Center Logo -->
         <div class="navbar-brand p-0 m-0">
-          <a href="{{route('home')}}" class="logo">
+          <a href="index.html" class="logo">
             <svg xmlns="http://www.w3.org/2000/svg" width="63" height="36" viewBox="0 0 63 36"
                  fill="none">
               <g clip-path="url(#clip0_3380_5341)">
@@ -422,64 +406,50 @@
   </div>
   <!-- =================================================================buyer  modal -->
 
-  <!-- Hero Slider -->
-  <section class="hero-slider">
-    <div class="swiper heroSwiper">
-      <div class="swiper-wrapper">
-        <!-- Slide 1 - Brown Bag -->
-        <div class="swiper-slide brown-slide" style="background: url(/images/header_hero-bg1.png);background-repeat: no-repeat;
-            background-position: center;
-            background-size: cover;">
-          <div class="container">
-            <div class="row align-items-center min-vh-100">
-              <div class="col-12">
-                <div class="slide-content">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Slide 2 - Pink Bag -->
-        <div class="swiper-slide pink-slide" style="background: url(/images/header_hero-bg2.jpg);background-repeat: no-repeat;
-            background-position: center;
-            background-size: cover;">
-          <div class="container">
-            <div class="row align-items-center min-vh-100">
-              <div class="col-12">
-                <div class="slide-content">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Slide 3 - Lifestyle -->
-        <div class="swiper-slide lifestyle-slide" style="background: url(/images/header_hero-bg1.png);background-repeat: no-repeat;
-            background-position: center;
-            background-size: cover;">
-          <div class="container">
-            <div class="row align-items-center min-vh-100">
-              <div class="col-12">
-                <div class="slide-content">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Navigation -->
-      <div class="swiper-button-next">
-        <i class="fas fa-chevron-right"></i>
-      </div>
-      <div class="swiper-button-prev">
-        <i class="fas fa-chevron-left"></i>
-      </div>
-      <div class="swiper-pagination"></div>
+  <!-- about-hero -->
+  <section class="about-hero">
+    <div class="container">
+      <h2 class="hero-title">Каждая модель SMB – это история,
+        в которой переплелись технологии
+        и ручная работа, визги восторога, слезы ошибок и бесконечная преданность своему делу
+      </h2>
     </div>
   </section>
-
+  <!--  -->
+  <section class="about-blocks">
+    <div class="big-container">
+      <div class="blocks">
+        <div class="box" style="background-image: url(/images/header_hero-bg2.jpg);" >
+          <div class="top-item">
+            <h4>ПРОИЗВОДСТВО в санкт-петербурге </h4>
+          </div>
+          <div class="bottom-item">
+            <div class="box-title_item">
+                                <span class="first-description">
+                                    Ул. Коли Томчака 8 (2 этаж) <br> с 08:00—15:00
+                                </span>
+              <span class="description">
+                                    Напиши нам перед визитом и приходи, чтобы влюбиться в свою SMB
+                                </span>
+            </div>
+            <a href="#" class="btn">перейти в чат с менеджером</a>
+          </div>
+        </div>
+        <div class="box"  style="background-image: url(/images/handbag2.png);"  >
+          <div class="top-item">
+            <h4>Шоурум в москве</h4>
+          </div>
+          <div class="bottom-item box2">
+                            <span class="second-box-title">
+                                Ул. Садовая-Сухаревская 15 стр. 1 (2 этаж)11:00—19:00 пн-вс
+                            </span>
+            <span class="second-box-title">
+                                Заходи в гости, посмотреть, потрогать, влюбиться. Мы делаем это для тебя </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
   <!-- Cookie Popup -->
   <div class="cookie-popup show" id="cookiePopup">
     <div class="cookie-content">
@@ -496,491 +466,9 @@
       </div>
     </div>
   </div>
-
   <!-- Popup Overlays -->
   <div class="popup-overlay" id="popupOverlay"></div>
-  <!-- =================================================header end========================================== -->
-  <section class="collection-section">
-    <div class="container">
-      <h2 class="section-title">НОВОЕ КОЛЛЕКЦИЯ</h2>
-
-      <div class="products-grid">
-        <!-- Product 1 -->
-        <div class="product-card">
-          <a href="product.html" class="product-image">
-            <img src="/images/section_bg-bag1.png" alt="Mini Rosa Handbag">
-          </a>
-          <div class="heart-icon" onclick="toggleHeart(this)">
-            <svg viewBox="0 0 24 24">
-              <path
-                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
-            </svg>
-          </div>
-          <div class="product-info">
-            <div class="product-brand">MINI ROSA</div>
-            <div class="product-price">29 000 ₽</div>
-            <div class="color-options">
-              <span class="color-option" style="background-color: #5E4F37;"></span>
-              <span class="color-option" style="background-color: #A86738;"></span>
-              <span class="color-option" style="background-color: #000000;"></span>
-              <span class="color-option" style="background-color: #DEDEDE;"></span>
-              <span class="color-option" style="background-color: #FF5733;"></span>
-              <span class="color-option" style="background-color: #33FF57;"></span>
-              <span class="color-option" style="background-color: #3357FF;"></span>
-              <span class="color-option" style="background-color: #F3FF33;"></span>
-              <span class="color-option" style="background-color: #FF33F3;"></span>
-              <span class="color-option" style="background-color: #33FFF3;"></span>
-              <span class="color-option" style="background-color: #FF9933;"></span>
-              <span class="color-option" style="background-color: #9933FF;"></span>
-              <span class="color-option" style="background-color: #33FF99;"></span>
-              <span class="color-option" style="background-color: #FF3399;"></span>
-              <span class="color-option" style="background-color: #99FF33;"></span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Product 2 -->
-        <div class="product-card">
-          <a href="product.html" class="product-image">
-
-            <img src="/images/section_bg-bag2.png" alt="Mini Rosa Handbag Black">
-          </a>
-          <div class="heart-icon" onclick="toggleHeart(this)">
-            <svg viewBox="0 0 24 24">
-              <path
-                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
-            </svg>
-          </div>
-          <div class="product-info">
-            <div class="product-brand">MINI ROSA</div>
-            <div class="product-price">29 000 ₽</div>
-            <div class="color-options">
-              <span class="color-option" style="background-color: #5E4F37;"></span>
-              <span class="color-option" style="background-color: #A86738;"></span>
-              <span class="color-option" style="background-color: #000000;"></span>
-              <span class="color-option" style="background-color: #DEDEDE;"></span>
-              <span class="color-option" style="background-color: #FF5733;"></span>
-              <span class="color-option" style="background-color: #33FF57;"></span>
-              <span class="color-option" style="background-color: #3357FF;"></span>
-              <span class="color-option" style="background-color: #F3FF33;"></span>
-              <span class="color-option" style="background-color: #FF33F3;"></span>
-              <span class="color-option" style="background-color: #33FFF3;"></span>
-              <span class="color-option" style="background-color: #FF9933;"></span>
-              <span class="color-option" style="background-color: #9933FF;"></span>
-              <span class="color-option" style="background-color: #33FF99;"></span>
-              <span class="color-option" style="background-color: #FF3399;"></span>
-              <span class="color-option" style="background-color: #99FF33;"></span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Product 3 -->
-        <div class="product-card">
-          <a href="product.html" class="product-image">
-
-            <img src="/images/section_bg-bag3.png" alt="Moss Handbag">
-          </a>
-          <div class="heart-icon" onclick="toggleHeart(this)">
-            <svg viewBox="0 0 24 24">
-              <path
-                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
-            </svg>
-          </div>
-          <div class="product-info">
-            <div class="product-brand">MOSS</div>
-            <div class="product-price">29 000 ₽</div>
-            <div class="color-options">
-              <span class="color-option" style="background-color: #5E4F37;"></span>
-              <span class="color-option" style="background-color: #A86738;"></span>
-              <span class="color-option" style="background-color: #000000;"></span>
-              <span class="color-option" style="background-color: #DEDEDE;"></span>
-              <span class="color-option" style="background-color: #FF5733;"></span>
-              <span class="color-option" style="background-color: #33FF57;"></span>
-              <span class="color-option" style="background-color: #3357FF;"></span>
-              <span class="color-option" style="background-color: #F3FF33;"></span>
-              <span class="color-option" style="background-color: #FF33F3;"></span>
-              <span class="color-option" style="background-color: #33FFF3;"></span>
-              <span class="color-option" style="background-color: #FF9933;"></span>
-              <span class="color-option" style="background-color: #9933FF;"></span>
-              <span class="color-option" style="background-color: #33FF99;"></span>
-              <span class="color-option" style="background-color: #FF3399;"></span>
-              <span class="color-option" style="background-color: #99FF33;"></span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Product 4 -->
-        <div class="product-card">
-          <a href="product.html" class="product-image">
-
-            <img src="/images/section_bg-bag4.png" alt="Mini Rosa Blue Handbag">
-          </a>
-          <div class="heart-icon" onclick="toggleHeart(this)">
-            <svg viewBox="0 0 24 24">
-              <path
-                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
-            </svg>
-          </div>
-          <div class="product-info">
-            <div class="product-brand">MINI ROSA</div>
-            <div class="product-price">29 000 ₽</div>
-            <div class="color-options">
-              <span class="color-option" style="background-color: #5E4F37;"></span>
-              <span class="color-option" style="background-color: #A86738;"></span>
-              <span class="color-option" style="background-color: #000000;"></span>
-              <span class="color-option" style="background-color: #DEDEDE;"></span>
-              <span class="color-option" style="background-color: #FF5733;"></span>
-              <span class="color-option" style="background-color: #33FF57;"></span>
-              <span class="color-option" style="background-color: #3357FF;"></span>
-              <span class="color-option" style="background-color: #F3FF33;"></span>
-              <span class="color-option" style="background-color: #FF33F3;"></span>
-              <span class="color-option" style="background-color: #33FFF3;"></span>
-              <span class="color-option" style="background-color: #FF9933;"></span>
-              <span class="color-option" style="background-color: #9933FF;"></span>
-              <span class="color-option" style="background-color: #33FF99;"></span>
-              <span class="color-option" style="background-color: #FF3399;"></span>
-              <span class="color-option" style="background-color: #99FF33;"></span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!--================================== collection-section end-->
-  <section class="WOMAN-MAN">
-    <div class="container">
-      <div class="block">
-        <a href="#" class="img" style="background-image: url('/images/WOMAN-MAN_section1.jpg')">
-          <h2>женщина</h2>
-        </a>
-        <a href="#" class="img" style="background-image: url('/images/WOMAN-MAN_section2.png')">
-          <h2>МУЖЧИНА</h2>
-        </a>
-      </div>
-    </div>
-  </section>
-  <!-- woМУЖЧИНА-МУЖЧИНА end -->
-  <a href="#" class="moni-moss" style="background-image: url('/images/mini-moss.png');">
-    <div class="container">
-      <div class="block">
-        <h2>MINI MOSS</h2>
-      </div>
-    </div>
-  </a>
-  <!-- women-МУЖЧИНА end -->
-
-  <section class="handbag-gallery">
-    <div class="handbag-gallery__container container">
-      <div class="handbag-gallery__slider swiper">
-        <div class="handbag-gallery__wrapper swiper-wrapper">
-          <div class="handbag-gallery__slide swiper-slide">
-            <div class="handbag-gallery__card">
-              <div class="handbag-gallery__image">
-                <img src="/images/handbag1.png" alt="">
-              </div>
-              <div class="handbag-gallery__username">@nikname_inst</div>
-            </div>
-          </div>
-
-          <div class="handbag-gallery__slide swiper-slide">
-            <div class="handbag-gallery__card">
-              <div class="handbag-gallery__image">
-                <img src="/images/handbag2.png" alt="">
-              </div>
-              <div class="handbag-gallery__username">@nikname_inst</div>
-            </div>
-          </div>
-
-          <div class="handbag-gallery__slide swiper-slide">
-            <div class="handbag-gallery__card">
-              <div class="handbag-gallery__text">
-                СЛИШКОМ СМЕЛО ДЛЯ ВСЕХ,<br>
-                ИДЕАЛЬНО ДЛЯ ТЕБЯ
-              </div>
-              <div class="handbag-gallery__image">
-                <img src="/images/handbag3.png" alt="">
-              </div>
-              <div class="handbag-gallery__username">@nikname_inst</div>
-            </div>
-          </div>
-
-          <div class="handbag-gallery__slide swiper-slide">
-            <div class="handbag-gallery__card">
-              <div class="handbag-gallery__image">
-                <img src="/images/handbag4.png" alt="">
-              </div>
-              <div class="handbag-gallery__username">@nikname_inst</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Mobile Grid -->
-      <!-- <div class="handbag-gallery__grid">
-          <div class="handbag-gallery__item">
-              <div class="handbag-gallery__card">
-                  <div class="handbag-gallery__image">
-                      <img src="/images/handbag1.png" alt="">
-                  </div>
-                  <div class="handbag-gallery__username">@nikname_inst</div>
-              </div>
-          </div>
-
-          <div class="handbag-gallery__item">
-              <div class="handbag-gallery__card">
-                  <div class="handbag-gallery__image">
-                      <img src="/images/handbag2.png" alt="">
-                  </div>
-                  <div class="handbag-gallery__username">@nikname_inst</div>
-              </div>
-          </div>
-
-          <div class="handbag-gallery__item">
-              <div class="handbag-gallery__card">
-                  <div class="handbag-gallery__image">
-                      <img src="/images/handbag3.png" alt="">
-                  </div>
-                  <div class="handbag-gallery__text">
-                      СЛИШКОМ СМЕЛО ДЛЯ ВСЕХ,<br>
-                      ИДЕАЛЬНО ДЛЯ ТЕБЯ
-                  </div>
-                  <div class="handbag-gallery__username">@nikname_inst</div>
-              </div>
-          </div>
-
-          <div class="handbag-gallery__item">
-              <div class="handbag-gallery__card">
-                  <div class="handbag-gallery__image">
-                      <img src="/images/handbag4.png" alt="">
-                  </div>
-                  <div class="handbag-gallery__username">@nikname_inst</div>
-              </div>
-          </div>
-      </div> -->
-    </div>
-  </section>
-  <!--====================== handbag-gallery end -->
-  <section class="deliver" style=" background-image: url('/images/deliver-bg.jpg');">
-    <div class="block">
-      <div class="box">
-        <h1>Сумка SMB - твой лучший <br> друг в большом городе</h1>
-        <a href="#">О бренде</a>
-      </div>
-    </div>
-  </section>
-  <!-- =========deliver end======= -->
-  <section class="collection-section">
-    <div class="container">
-      <h2 class="section-title2">НОВОЕ</h2>
-
-      <div class="products-grid">
-        <!-- Product 1 -->
-        <div class="product-card">
-          <a href="product.html" class="product-image">
-
-            <img src="/images/section_bg-bag5.png" alt="Mini Rosa Handbag">
-          </a>
-          <div class="heart-icon" onclick="toggleHeart(this)">
-            <svg viewBox="0 0 24 24">
-              <path
-                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
-            </svg>
-          </div>
-          <!-- isНОВОЕ icon -->
-          <div class="isnew-icon">
-            <svg width="39" height="102" viewBox="0 0 39 102" fill="none"
-                 xmlns="http://www.w3.org/2000/svg">
-              <rect x="0.5" y="0.5" width="38" height="101" stroke="#91BE17" />
-              <text x="15" y="110" font-size="16" fill="#91BE17"
-                    transform="rotate(-90 5,90)">НОВОЕ</text>
-            </svg>
-
-          </div>
-          <div class="product-info">
-            <div class="product-brand">MINI ROSA</div>
-            <div class="product-price_item">
-              <div class="old-product-price">29 000 ₽</div>
-              <div class="product-price">21 000 ₽</div>
-            </div>
-
-            <div class="color-options">
-              <span class="color-option" style="background-color: #5E4F37;"></span>
-              <span class="color-option" style="background-color: #A86738;"></span>
-              <span class="color-option" style="background-color: #000000;"></span>
-              <span class="color-option" style="background-color: #DEDEDE;"></span>
-              <span class="color-option" style="background-color: #FF5733;"></span>
-              <span class="color-option" style="background-color: #33FF57;"></span>
-              <span class="color-option" style="background-color: #3357FF;"></span>
-              <span class="color-option" style="background-color: #F3FF33;"></span>
-              <span class="color-option" style="background-color: #FF33F3;"></span>
-              <span class="color-option" style="background-color: #33FFF3;"></span>
-              <span class="color-option" style="background-color: #FF9933;"></span>
-              <span class="color-option" style="background-color: #9933FF;"></span>
-              <span class="color-option" style="background-color: #33FF99;"></span>
-              <span class="color-option" style="background-color: #FF3399;"></span>
-              <span class="color-option" style="background-color: #99FF33;"></span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Product 2 -->
-        <div class="product-card">
-          <a href="product.html" class="product-image">
-
-            <img src="/images/section_bg-bag2.png" alt="Mini Rosa Handbag Black">
-          </a>
-          <div class="heart-icon" onclick="toggleHeart(this)">
-            <svg viewBox="0 0 24 24">
-              <path
-                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
-            </svg>
-
-          </div>
-          <!-- isnew icon -->
-          <div class="isnew-icon">
-            <svg width="39" height="102" viewBox="0 0 39 102" fill="none"
-                 xmlns="http://www.w3.org/2000/svg">
-              <rect x="0.5" y="0.5" width="38" height="101" stroke="#91BE17" />
-              <text x="15" y="110" font-size="16" fill="#91BE17"
-                    transform="rotate(-90 5,90)">НОВОЕ</text>
-            </svg>
-
-          </div>
-          <div class="product-info">
-            <div class="product-brand">MINI ROSA</div>
-            <div class="product-price_item">
-              <div class="old-product-price">29 000 ₽</div>
-              <div class="product-price">21 000 ₽</div>
-            </div>
-            <div class="color-options">
-              <span class="color-option" style="background-color: #5E4F37;"></span>
-              <span class="color-option" style="background-color: #A86738;"></span>
-              <span class="color-option" style="background-color: #000000;"></span>
-              <span class="color-option" style="background-color: #DEDEDE;"></span>
-              <span class="color-option" style="background-color: #FF5733;"></span>
-              <span class="color-option" style="background-color: #33FF57;"></span>
-              <span class="color-option" style="background-color: #3357FF;"></span>
-              <span class="color-option" style="background-color: #F3FF33;"></span>
-              <span class="color-option" style="background-color: #FF33F3;"></span>
-              <span class="color-option" style="background-color: #33FFF3;"></span>
-              <span class="color-option" style="background-color: #FF9933;"></span>
-              <span class="color-option" style="background-color: #9933FF;"></span>
-              <span class="color-option" style="background-color: #33FF99;"></span>
-              <span class="color-option" style="background-color: #FF3399;"></span>
-              <span class="color-option" style="background-color: #99FF33;"></span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Product 3 -->
-        <div class="product-card">
-          <a href="product.html" class="product-image">
-
-            <img src="/images/section_bg-bag6.png" alt="Moss Handbag">
-          </a>
-          <div class="heart-icon" onclick="toggleHeart(this)">
-            <svg viewBox="0 0 24 24">
-              <path
-                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
-            </svg>
-          </div>
-          <!-- isnew icon -->
-          <div class="isnew-icon">
-            <svg width="39" height="102" viewBox="0 0 39 102" fill="none"
-                 xmlns="http://www.w3.org/2000/svg">
-              <rect x="0.5" y="0.5" width="38" height="101" stroke="#91BE17" />
-              <text x="15" y="110" font-size="16" fill="#91BE17"
-                    transform="rotate(-90 5,90)">НОВОЕ</text>
-            </svg>
-
-          </div>
-          <div class="product-info">
-            <div class="product-brand">MINI ROSA</div>
-            <div class="product-price_item">
-              <div class="old-product-price">29 000 ₽</div>
-              <div class="product-price">21 000 ₽</div>
-            </div>
-            <div class="color-options">
-              <span class="color-option" style="background-color: #5E4F37;"></span>
-              <span class="color-option" style="background-color: #A86738;"></span>
-              <span class="color-option" style="background-color: #000000;"></span>
-              <span class="color-option" style="background-color: #DEDEDE;"></span>
-              <span class="color-option" style="background-color: #FF5733;"></span>
-              <span class="color-option" style="background-color: #33FF57;"></span>
-              <span class="color-option" style="background-color: #3357FF;"></span>
-              <span class="color-option" style="background-color: #F3FF33;"></span>
-              <span class="color-option" style="background-color: #FF33F3;"></span>
-              <span class="color-option" style="background-color: #33FFF3;"></span>
-              <span class="color-option" style="background-color: #FF9933;"></span>
-              <span class="color-option" style="background-color: #9933FF;"></span>
-              <span class="color-option" style="background-color: #33FF99;"></span>
-              <span class="color-option" style="background-color: #FF3399;"></span>
-              <span class="color-option" style="background-color: #99FF33;"></span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Product 4 -->
-        <div class="product-card">
-          <a href="product.html" class="product-image">
-
-            <img src="/images/section_bg-bag7.png" alt="Mini Rosa Blue Handbag">
-          </a>
-          <div class="heart-icon" onclick="toggleHeart(this)">
-            <svg viewBox="0 0 24 24">
-              <path
-                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
-            </svg>
-          </div>
-          <!-- isnew icon -->
-          <div class="isnew-icon">
-            <svg width="39" height="102" viewBox="0 0 39 102" fill="none"
-                 xmlns="http://www.w3.org/2000/svg">
-              <rect x="0.5" y="0.5" width="38" height="101" stroke="#91BE17" />
-              <text x="15" y="110" font-size="16" fill="#91BE17"
-                    transform="rotate(-90 5,90)">НОВОЕ</text>
-            </svg>
-
-          </div>
-          <div class="product-info">
-            <div class="product-brand">MINI ROSA</div>
-            <div class="product-price_item">
-              <div class="old-product-price">29 000 ₽</div>
-              <div class="product-price">21 000 ₽</div>
-            </div>
-            <div class="color-options">
-              <span class="color-option" style="background-color: #5E4F37;"></span>
-              <span class="color-option" style="background-color: #A86738;"></span>
-              <span class="color-option" style="background-color: #000000;"></span>
-              <span class="color-option" style="background-color: #DEDEDE;"></span>
-              <span class="color-option" style="background-color: #FF5733;"></span>
-              <span class="color-option" style="background-color: #33FF57;"></span>
-              <span class="color-option" style="background-color: #3357FF;"></span>
-              <span class="color-option" style="background-color: #F3FF33;"></span>
-              <span class="color-option" style="background-color: #FF33F3;"></span>
-              <span class="color-option" style="background-color: #33FFF3;"></span>
-              <span class="color-option" style="background-color: #FF9933;"></span>
-              <span class="color-option" style="background-color: #9933FF;"></span>
-              <span class="color-option" style="background-color: #33FF99;"></span>
-              <span class="color-option" style="background-color: #FF3399;"></span>
-              <span class="color-option" style="background-color: #99FF33;"></span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- ==============collection section end -->
-  <section class="deliver2" style="background-image: url('/images/deliver2-bg.png');">
-    <div class="block">
-      <div class="box">
-        <h1>Подбери подарочную <br> карту для себя <br>
-          или друга</h1>
-        <a href="#">Подарить карту</a>
-      </div>
-    </div>
-  </section>
-  <!-- deliver2 end -->
+  <!-- =========================================================== coookie end -->
   <section class="smb-newsletter-section">
     <div class="smb-newsletter-container">
       <h1 class="smb-newsletter-title">СЕКРЕТ SMB Магазин</h1>
@@ -1041,7 +529,7 @@
       </div>
     </div>
   </div>
-
+  <!--  -->
   <!-- ========================== -->
   <div class="footer_top-item">
     <ul>
