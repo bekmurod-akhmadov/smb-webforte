@@ -4,19 +4,21 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class TextBlock extends Model
+class MarqueeBanner extends Model
 {
-    protected $table = 'text_blocks';
+    protected $table = 'marquee_banners';
 
     public const STATUS_ACTIVE = 1;
     public const STATUS_INACTIVE = 0;
 
     protected $fillable = [
-        'name',
-        'title',
-        'content',
-        'image',
+        'text',
         'status',
+        'sort',
+    ];
+
+    protected $casts = [
+        'status' => 'boolean',
     ];
 
     public static function statusOptions(): array
@@ -25,10 +27,5 @@ class TextBlock extends Model
             self::STATUS_ACTIVE   => __('app.status.active'),
             self::STATUS_INACTIVE => __('app.status.inactive'),
         ];
-    }
-
-    public function scopeActive($query)
-    {
-        return $query->where('status', true);
     }
 }

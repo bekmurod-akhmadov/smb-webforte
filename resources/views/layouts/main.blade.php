@@ -368,5 +368,21 @@
         </div>
       </div>
     </div>
+    <div class="cookie-popup show" id="cookiePopup">
+      <div class="cookie-content">
+        <div class="cookie-text">
+          <p>На этом веб-сайте используются файлы cookie и аналогичные технологии <br> в соответствии с
+            условиями
+            <a href="#">Политики использования cookie</a>
+          </p>
+        </div>
+        <div class="cookie-actions">
+          <button class="btn-decline">ОТКЛОНИТЬ ВСЕ</button>
+          <button class="btn-accept">ПРИНЯТЬ</button>
+
+        </div>
+      </div>
+    </div>
+    <div class="popup-overlay" id="popupOverlay"></div>
 </body>
 </html>

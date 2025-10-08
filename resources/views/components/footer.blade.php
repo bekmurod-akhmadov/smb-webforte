@@ -1,19 +1,24 @@
-<div class="footer_top-item">
-  <ul>
-    <li>
-      <a href="product.html">Магазин</a>
-    </li>
-    <li>
-      <a href="#">О бренде</a>
-    </li>
-    <li>
-      <a href="#">Мешковый этап</a>
-    </li>
-    <li>
-      <a href="#">Подарочные карты</a>
-    </li>
-  </ul>
-</div>
+@php
+  use App\Models\Menu;
+
+@endphp
+
+@if(isset($menus[null]) || isset($menus['']))
+  <div class="footer_top-item">
+    <ul>
+
+      @foreach($menus as $menu)
+
+        <li>
+          <a href="{{$menu->url}}"  target="{{ $menu->target }}">{{$menu->title}}</a>
+        </li>
+
+      @endforeach
+
+    </ul>
+  </div>
+@endif
+
 <footer class="smb-footer">
   <div class="container">
     <!-- Desktop Version -->
@@ -63,8 +68,9 @@
                 </defs>
               </svg>
             </a>
-            <a href="#" class="smb-payment-icon"><svg xmlns="http://www.w3.org/2000/svg" width="49"
-                                                      height="15" viewBox="0 0 49 15" fill="none">
+            <a href="#" class="smb-payment-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="49"
+                   height="15" viewBox="0 0 49 15" fill="none">
                 <g clip-path="url(#clip0_3041_10909)">
                   <path d="M17.2617 14.7821L19.7391 0.25H23.7164L21.2256 14.7821H17.2617Z"
                         fill="black" />
@@ -86,9 +92,11 @@
                     <rect width="49" height="15" fill="white" />
                   </clipPath>
                 </defs>
-              </svg></a>
-            <a href="#" class="smb-payment-icon"><svg xmlns="http://www.w3.org/2000/svg" width="37"
-                                                      height="23" viewBox="0 0 37 23" fill="none">
+              </svg>
+            </a>
+            <a href="#" class="smb-payment-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="37"
+                   height="23" viewBox="0 0 37 23" fill="none">
                 <g clip-path="url(#clip0_3041_10915)">
                   <path
                     d="M37.0003 11.0909C37.0003 17.2036 32.0501 22.1662 25.9249 22.1662C19.8123 22.1662 14.8496 17.2161 14.8496 11.0909C14.8496 4.97826 19.7998 0.015625 25.9249 0.015625C32.0376 0.015625 37.0003 4.96576 37.0003 11.0909Z"
@@ -168,38 +176,34 @@
                     <rect width="37" height="23" fill="white" />
                   </clipPath>
                 </defs>
-              </svg></a>
+              </svg>
+            </a>
           </div>
         </div>
 
         <!-- Column 3: Data Security -->
-        <div class="smb-footer-column">
-          <h3 class="smb-footer-title">Покупателям</h3>
-          <ul class="smb-footer-links">
-            <li><a href="#">Доставка</a></li>
-            <li><a href="#">Оплата</a></li>
-            <li><a href="#">Возврат</a></li>
-            <li><a href="#">Программа лояльности</a></li>
-            <li><a href="#">Правила приобретения <br> и применения подарочных карт</a></li>
+        @if(isset($menus[Menu::GROUP_BUYERS]))
+          <div class="smb-footer-column">
+            <h3 class="smb-footer-title">ПОКУПАТЕЛЯМ</h3>
+            <ul class="smb-footer-links">
+              @foreach($menus[Menu::GROUP_BUYERS] as $menu)
+                <li><a href="{{ $menu->url }}" target="{{ $menu->target }}">{{ $menu->title }}</a></li>
+              @endforeach
+            </ul>
+          </div>
+        @endif
 
-          </ul>
-        </div>
-        <!-- Column 3: Data Security -->
-        <div class="smb-footer-column">
-          <h3 class="smb-footer-title">БЕЗОПАСНОСТЬ ДАННЫХ</h3>
-          <ul class="smb-footer-links">
-            <li><a href="#">Политика обработки персональных <br> данных</a></li>
-            <li><a href="#">Согласие на обработку <br> персональных данных</a></li>
-            <li><a href="#">Публичная оферта</a></li>
-            <li><a href="#">Пользовательское соглашение</a></li>
-            <li><a href="#">Согласие на получение рекламной <br> рассылки</a></li>
-            <li><a href="#">Согласие на обработку <br>персональных данных, собираемых <br>
-                метрическими
-                системами</a>
-            </li>
-            <li><a href="#">Cookies</a></li>
-          </ul>
-        </div>
+        <!-- Колонка: Безопасность данных -->
+        @if(isset($menus[Menu::GROUP_SECURITY]))
+          <div class="smb-footer-column">
+            <h3 class="smb-footer-title">БЕЗОПАСНОСТЬ ДАННЫХ</h3>
+            <ul class="smb-footer-links">
+              @foreach($menus[Menu::GROUP_SECURITY] as $menu)
+                <li><a href="{{ $menu->url }}" target="{{ $menu->target }}">{{ $menu->title }}</a></li>
+              @endforeach
+            </ul>
+          </div>
+        @endif
 
         <!-- Empty Column for spacing -->
         <div class="smb-footer-column"></div>
@@ -207,7 +211,8 @@
 
       <div class="smb-footer-bottom">
         <p class="smb-copyright">© SMB 2025</p>
-        <a href="#" class="smb-developer">Разработано Effect.Web</a>
+        <a href="{{site_setting('footer_creator_link')}}" class="smb-developer"
+           target="_blank">{{site_setting('footer_creator')}}</a>
       </div>
     </div>
 
@@ -227,7 +232,7 @@
           <div class="smb-mobile-content">
             <div class="smb-mobile-links">
               <ul>
-                <li> <a href="product.html">Магазин</a>
+                <li><a href="product.html">Магазин</a>
                 </li>
                 <li><a href="#">О бренде</a></li>
                 <li><a href="#">Мешковый этап</a></li>
@@ -393,8 +398,8 @@
       </div>
 
       <div class="smb-mobile-footer">
-        <p class="smb-copyright">© SMB 2025</p>
-        <a href="#" class="smb-developer">Разработано Effect.Web</a>
+        <p class="smb-copyright">{{site_setting('footer_copyright')}}</p>
+        <a href="#" class="smb-developer">{{site_setting('footer_creator')}}</a>
       </div>
     </div>
   </div>

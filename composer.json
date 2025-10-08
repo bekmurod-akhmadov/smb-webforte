@@ -19,16 +19,15 @@
     "filament/filament": "^3.2.50",
     "hasnayeen/themes": "^3.0",
     "joaopaulolndev/filament-edit-profile": "^1.0",
+    "joshembling/image-optimizer": "^1.6",
     "laravel/framework": "^12.0",
     "laravel/sanctum": "^4.0",
     "laravel/tinker": "^2.9",
     "livewire/livewire": "^3.3",
-    "mcamara/laravel-localization": "^2.3",
     "njxqlus/filament-progressbar": "^1.1",
     "outerweb/filament-settings": "^1.3",
     "pboivin/filament-peek": "^2.2",
     "sinnbeck/markdom": "^2.0",
-    "spatie/laravel-translatable": "^6.11",
     "z3d0x/filament-logger": "^0.8.0"
   },
   "require-dev": {

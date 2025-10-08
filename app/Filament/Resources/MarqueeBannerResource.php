@@ -2,26 +2,27 @@
 
 namespace App\Filament\Resources;
 
-use AbdulmajeedJamaan\FilamentTranslatableTabs\TranslatableTabs;
-use App\Filament\Resources\TextBlockResource\Pages;
-use App\Models\TextBlock;
-use Awcodes\Curator\Components\Forms\CuratorPicker;
-use Awcodes\Curator\Components\Tables\CuratorColumn;
+use App\Filament\Resources\MarqueeBannerResource\Pages;
+use App\Filament\Resources\MarqueeBannerResource\RelationManagers;
+use App\Models\MarqueeBanner;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class TextBlockResource extends Resource
+class MarqueeBannerResource extends Resource
 {
-    protected static ?string $model = TextBlock::class;
+    protected static ?string $model = MarqueeBanner::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
     protected static ?string $navigationGroup = 'resources';
 
-    protected static ?int $navigationSort = 20;
+    protected static ?int $navigationSort = 2;
 
     public static function getNavigationGroup(): ?string
     {
@@ -30,12 +31,12 @@ class TextBlockResource extends Resource
 
     public static function getModelLabel(): string
     {
-        return __('app.label.text_block_single');
+        return __('app.label.marquee_single');
     }
 
     public static function getPluralModelLabel(): string
     {
-        return __('app.label.text_block_plural');
+        return __('app.label.marquee_plural');
     }
 
     public static function getNavigationBadge(): ?string
@@ -48,25 +49,25 @@ class TextBlockResource extends Resource
         return $form
             ->schema([
                 Forms\Components\Grid::make()
-                    ->columns(1)
+                    ->columns(2)
                     ->schema([
                         Forms\Components\Section::make()
                             ->columnSpan(1)
                             ->schema([
-                                Forms\Components\TextInput::make('name')
-                                    ->label(__('app.label.system_name'))
-                                    ->required()
-                                    ->unique(ignoreRecord: true),
-
-                                CuratorPicker::make('image')
-                                    ->label(__('app.label.main_image')),
-
-                                Forms\Components\TextInput::make('title')
-                                    ->label(__('app.label.title'))
+                                Forms\Components\TextInput::make('text')
+                                    ->label(__('app.label.text'))
                                     ->required(),
 
-                                Forms\Components\RichEditor::make('content')
-                                    ->label(__('app.label.content')),
+                            ]),
+
+                        Forms\Components\Section::make()
+                            ->columnSpan(1)
+                            ->schema([
+
+                                Forms\Components\TextInput::make('sort')
+                                    ->label(__('app.label.sort'))
+                                    ->numeric()
+                                    ->required(),
 
                                 Forms\Components\Toggle::make('status')
                                     ->label(__('app.label.status'))
@@ -79,48 +80,40 @@ class TextBlockResource extends Resource
     public static function table(Table $table): Table
     {
         return $table
+            ->defaultSort('updated_at', 'desc')
             ->columns([
-                CuratorColumn::make('image')
-                    ->label(__('app.label.image'))
-                    ->size(56),
-
-                Tables\Columns\TextColumn::make('name')
-                    ->label(__('app.label.system_name'))
-                    ->searchable()
-                    ->sortable(),
-
-                Tables\Columns\TextColumn::make('title')
-                    ->label(__('app.label.title'))
+                Tables\Columns\TextColumn::make('text')
+                    ->label(__('app.label.text'))
                     ->sortable()
                     ->wrap()
                     ->searchable(),
 
+                Tables\Columns\TextColumn::make('sort')
+                    ->label(__('app.label.sort'))
+                    ->sortable(),
+
+                Tables\Columns\ToggleColumn::make('status')
+                    ->label(__('app.label.status'))
+                    ->sortable()
+                    ->onIcon('heroicon-m-check-circle')
+                    ->offIcon('heroicon-m-x-circle')
+                    ->onColor('success')
+                    ->offColor('danger'),
+
                 Tables\Columns\TextColumn::make('created_at')
                     ->label(__('app.label.created'))
                     ->dateTime('d.m.Y H:i')
-                    ->sortable()
                     ->toggleable(),
 
                 Tables\Columns\TextColumn::make('updated_at')
                     ->label(__('app.label.updated'))
                     ->dateTime('d.m.Y H:i')
-                    ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
-
-                Tables\Columns\TextColumn::make('status')
-                    ->label(__('app.label.status'))
-                    ->formatStateUsing(fn ($state) => $state ? __('app.label.active') : __('app.label.inactive'))
-                    ->badge()
-                    ->sortable()
-                    ->color(fn ($state) => $state ? 'success' : 'danger'),
             ])
             ->filters([
-                Tables\Filters\SelectFilter::make('status')
+                SelectFilter::make('status')
                     ->label(__('app.label.status'))
-                    ->options([
-                        1 => __('app.label.active'),
-                        0 => __('app.label.inactive'),
-                    ]),
+                    ->options(MarqueeBanner::statusOptions()),
             ])
             ->actions([
                 Tables\Actions\ViewAction::make(),
@@ -144,10 +137,10 @@ class TextBlockResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListTextBlocks::route('/'),
-            'create' => Pages\CreateTextBlock::route('/create'),
-            'view' => Pages\ViewTextBlock::route('/{record}'),
-            'edit' => Pages\EditTextBlock::route('/{record}/edit'),
+            'index' => Pages\ListMarqueeBanners::route('/'),
+            'create' => Pages\CreateMarqueeBanner::route('/create'),
+            'view' => Pages\ViewMarqueeBanner::route('/{record}'),
+            'edit' => Pages\EditMarqueeBanner::route('/{record}/edit'),
         ];
     }
 }

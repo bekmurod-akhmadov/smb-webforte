@@ -11,20 +11,19 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('site_translations', function (Blueprint $table) {
+        Schema::create('marquee_banners', function (Blueprint $table) {
             $table->id();
-            $table->string('category')->nullable();
-            $table->string('key');
-            $table->json('value');
+            $table->string('text');
+            $table->boolean('status')->default(true)->index();
+            $table->unsignedInteger('sort')->default(0);
             $table->timestamps();
         });
     }
-
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('site_translations');
+        Schema::dropIfExists('marquee_banners');
     }
 };

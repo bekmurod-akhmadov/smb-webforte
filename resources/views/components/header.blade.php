@@ -21,13 +21,21 @@
           </svg>
         </div>
       </button>
-      <!-- Left Navigation -->
-      <div class="navbar-left d-none d-lg-flex">
-        <a href="{{route('about')}}" class="nav-link">О НАС
-        </a>
-        <a href="catalog.html" class="nav-link">ЖЕНЩИНА</a>
-        <a href="catalog.html" class="nav-link">МУЖЧИНА</a>
-      </div>
+
+      @if(!empty($menus))
+
+        <!-- Left Navigation -->
+        <div class="navbar-left d-none d-lg-flex">
+          @foreach($menus as $menu)
+
+            <a href="{{$menu->url}}" class="nav-link" target="{{$menu->target}}">
+              {{$menu->title}}
+            </a>
+
+          @endforeach
+        </div>
+
+      @endif
       <!-- Center Logo -->
       <div class="navbar-brand p-0 m-0">
         <a href="{{route('home')}}" class="logo">

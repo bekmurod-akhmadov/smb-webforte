@@ -1,0 +1,33 @@
+{
+  "resources/assets/fonts/HelveticaNeue-Light.otf": {
+    "file": "assets/HelveticaNeue-Light-Ct5-NwMS.otf",
+    "src": "resources/assets/fonts/HelveticaNeue-Light.otf"
+  },
+  "resources/assets/fonts/HelveticaNeue-Medium.otf": {
+    "file": "assets/HelveticaNeue-Medium-BlACjMrQ.otf",
+    "src": "resources/assets/fonts/HelveticaNeue-Medium.otf"
+  },
+  "resources/assets/fonts/HelveticaNeue-Roman.otf": {
+    "file": "assets/HelveticaNeue-Roman-CSpBGpqm.otf",
+    "src": "resources/assets/fonts/HelveticaNeue-Roman.otf"
+  },
+  "resources/css/app.css": {
+    "file": "assets/app-DB1hKT9j.css",
+    "src": "resources/css/app.css",
+    "isEntry": true
+  },
+  "resources/css/filament/theme.css": {
+    "file": "assets/theme-BsmZ11AG.css",
+    "src": "resources/css/filament/theme.css",
+    "isEntry": true
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-DJsHRfTM.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true,
+    "css": [
+      "assets/app-DwnylDLp.css"
+    ]
+  }
+}

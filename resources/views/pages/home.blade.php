@@ -3,22 +3,8 @@
   @section('title', 'Главная')
 
 @section('content')
-  <!-- Top Marquee Banner -->
-  <div class="top-banner">
-    <div class="marquee-container">
-      <div class="marquee-content" id="marquee-content">
-        <span>DROP MINI MOSS 2 д 12 ч 7 м</span>
-        <span>LIMIT MINI MOSS 2 д 12 ч 7 м</span>
-        <span>LIMIT MINI MOSS 2 д 12 ч 7 м</span>
-        <span>LIMIT MINI MOSS 2 д 12 ч 7 м</span>
-        <span>LIMIT MINI MOSS 2 д 12 ч 7 м</span>
-        <span>LIMIT MINI MOSS 2 д 12 ч 7 м</span>
-        <span>LIMIT MINI MOSS 2 д 12 ч 7 м</span>
-        <span>ДРОП GOSHA 2 д 12 ч 7 м</span>
-        <span>ДРОП GOSHA 2 д 12 ч 7 м</span>
-      </div>
-    </div>
-  </div>
+
+  <x-marquee />
 
   <x-header/>
 
@@ -284,25 +270,6 @@
     </div>
   </section>
 
-  <!-- Cookie Popup -->
-  <div class="cookie-popup show" id="cookiePopup">
-    <div class="cookie-content">
-      <div class="cookie-text">
-        <p>На этом веб-сайте используются файлы cookie и аналогичные технологии <br> в соответствии с
-          условиями
-          <a href="#">Политики использования cookie</a>
-        </p>
-      </div>
-      <div class="cookie-actions">
-        <button class="btn-decline">ОТКЛОНИТЬ ВСЕ</button>
-        <button class="btn-accept">ПРИНЯТЬ</button>
-
-      </div>
-    </div>
-  </div>
-
-  <!-- Popup Overlays -->
-  <div class="popup-overlay" id="popupOverlay"></div>
   <!-- =================================================header end========================================== -->
   <section class="collection-section">
     <div class="container">

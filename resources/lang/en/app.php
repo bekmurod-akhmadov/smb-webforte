@@ -2,6 +2,16 @@
 
 return [
     'label' => [
+        'hero_gallery_single' => 'Main Screen Slide',
+        'hero_gallery_single_plural' => 'Main Screen Slides',
+        'type_image' => 'Image',
+        'type_video' => 'Video',
+        'text' => 'Text',
+        'marquee_single' => 'Marquee Banner',
+        'marquee_plural' => 'Marquee Banners',
+        'target' => 'Open in',
+        'parent' => 'Parent item',
+        'group' => 'Group',
         'pages_single' => 'Page',
         'pages_plural' => 'Pages',
         'description' => 'Description',
@@ -72,17 +82,25 @@ return [
         'role' => 'Role',
 
     ],
-
     'status' => [
         'active' => 'Active',
         'inactive' => 'Inactive',
     ],
-
+    'menu' => [
+        'header' => 'Header menu',
+        'footer' => 'Footer menu',
+        'target_self' => 'Same tab',
+        'target_blank' => 'New tab',
+        'group_navigation'   => 'Navigation',
+        'group_buyers'   => 'For buyers',
+        'group_security' => 'Data security',
+    ],
     'helper' => [
         'key'   => 'Enter a key for translation (e.g. main_title)',
         'value' => 'Enter a translation for this key',
         'menu_title' => 'Enter menu title',
         'helper_slug' => 'Only latin letters, numbers, dash and underscore. Example: my-category-1',
+        'menu_group' => 'Select a group (e.g. "For buyers" or "Data security")',
     ],
 
 ];
