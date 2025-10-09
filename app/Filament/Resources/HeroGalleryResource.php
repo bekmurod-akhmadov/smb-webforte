@@ -64,7 +64,7 @@ class HeroGalleryResource extends Resource
                                 // Desktop image
                                 Forms\Components\FileUpload::make('desktop_file')
                                     ->label(__('app.label.desktop_image'))
-                                    ->directory("uploads/hero-gallery/temp/desktop")
+                                    ->directory('uploads/hero-gallery/desktop')
                                     ->visible(fn (Get $get) => $get('type') === 'image')
                                     ->required(fn (Get $get) => $get('type') === 'image')
                                     ->image()
@@ -75,7 +75,7 @@ class HeroGalleryResource extends Resource
                                 // Desktop video
                                 Forms\Components\FileUpload::make('desktop_file')
                                     ->label(__('app.label.desktop_video'))
-                                    ->directory("uploads/hero-gallery/temp/desktop")
+                                    ->directory('uploads/hero-gallery/desktop')
                                     ->visible(fn (Get $get) => $get('type') === 'video')
                                     ->required(fn (Get $get) => $get('type') === 'video')
                                     ->acceptedFileTypes(['video/mp4', 'video/webm'])
@@ -88,7 +88,7 @@ class HeroGalleryResource extends Resource
                                 // Mobile image
                                 Forms\Components\FileUpload::make('mobile_file')
                                     ->label(__('app.label.mobile_image'))
-                                    ->directory("uploads/hero-gallery/temp/mobile")
+                                    ->directory('uploads/hero-gallery/mobile')
                                     ->visible(fn (Get $get) => $get('type') === 'image')
                                     ->required(fn (Get $get) => $get('type') === 'image')
                                     ->image()
@@ -99,7 +99,7 @@ class HeroGalleryResource extends Resource
                                 // Mobile video
                                 Forms\Components\FileUpload::make('mobile_file')
                                     ->label(__('app.label.mobile_video'))
-                                    ->directory("uploads/hero-gallery/temp/mobile")
+                                    ->directory('uploads/hero-gallery/mobile')
                                     ->visible(fn (Get $get) => $get('type') === 'video')
                                     ->acceptedFileTypes(['video/mp4', 'video/webm'])
                                     ->mimeTypeMap([
