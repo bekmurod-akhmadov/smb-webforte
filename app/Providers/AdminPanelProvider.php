@@ -5,7 +5,6 @@ namespace App\Providers;
 use App\Filament\Pages\Settings\Settings;
 use Awcodes\Curator\CuratorPlugin;
 use BezhanSalleh\FilamentShield\FilamentShieldPlugin;
-use Cmsmaxinc\FilamentSystemVersions\Filament\Widgets\DependencyWidget;
 use DiogoGPinto\AuthUIEnhancer\AuthUIEnhancerPlugin;
 use Filament\Enums\ThemeMode;
 use Filament\Http\Middleware\Authenticate;
@@ -48,7 +47,7 @@ class AdminPanelProvider extends PanelProvider
             ->profile(EditProfile::class, isSimple: false)
             ->defaultThemeMode(ThemeMode::Light)
             ->font('Montserrat')
-            ->spa()
+            ->spa(false)
             ->databaseNotifications()
             ->navigationItems([
                 NavigationItem::make()

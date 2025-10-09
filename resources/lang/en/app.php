@@ -2,6 +2,12 @@
 
 return [
     'label' => [
+        'desktop_image'  => 'Desktop (image)',
+        'desktop_video'  => 'Desktop (video)',
+        'mobile_image'   => 'Mobile (image)',
+        'mobile_video'   => 'Mobile (video)',
+        'files'          => 'Files',
+        'type'           => 'File type',
         'hero_gallery_single' => 'Main Screen Slide',
         'hero_gallery_single_plural' => 'Main Screen Slides',
         'type_image' => 'Image',

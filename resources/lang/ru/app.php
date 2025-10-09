@@ -2,6 +2,12 @@
 
 return [
     'label' => [
+        'desktop_image'=> 'Компьютер (изображение)',
+        'desktop_video'=> 'Компьютер (видео)',
+        'mobile_image' => 'Мобильный (изображение)',
+        'mobile_video' => 'Мобильный (видео)',
+        'files'          => 'Файлы',
+        'type'           => 'Тип файла',
         'hero_gallery_single' => 'Слайд главного экрана',
         'hero_gallery_single_plural' => 'Слайды главного экрана',
         'type_image' => 'Изображение',
