@@ -2,7 +2,6 @@
 
 namespace App\Providers;
 
-use AbdulmajeedJamaan\FilamentTranslatableTabs\TranslatableTabs;
 use App\Policies\ActivityPolicy;
 use BezhanSalleh\FilamentLanguageSwitch\LanguageSwitch;
 use Filament\Facades\Filament;
@@ -50,18 +49,5 @@ class AppServiceProvider extends ServiceProvider
             $switch
                 ->locales(['ru','en']);
         });
-
-//        TranslatableTabs::configureUsing(function (TranslatableTabs $component) {
-//            $component
-//                ->localesLabels([
-//                    'ru' => __('app.label.ru'),
-//                    'uz' => __('app.label.uz'),
-//                    'en' => __('app.label.en'),
-//                ])
-//                ->locales(['uz', 'ru', 'en'])
-//                ->addDirectionByLocale()
-//                ->addEmptyBadgeWhenAllFieldsAreEmpty(emptyLabel: __('app.label.empty'))
-//                ->addSetActiveTabThatHasValue();
-//        });
     }
 }

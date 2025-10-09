@@ -384,5 +384,214 @@
       </div>
     </div>
     <div class="popup-overlay" id="popupOverlay"></div>
+    <div class="buyer_modal">
+      <!-- Cart Modal -->
+      <div class="cart-modal-overlay" id="cartModal">
+        <div class="cart-modal">
+          <!-- Header -->
+          <div class="cart-header">
+            <div class="cart-title">
+              МОЯ КОРЗИНА <span class="cart-count">(3)</span>
+            </div>
+            <button class="close-cart" onclick="closeCartModal()">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                   xmlns="http://www.w3.org/2000/svg">
+                <mask id="mask0_687_58555" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0"
+                      y="0" width="24" height="24">
+                  <rect width="24" height="24" fill="#D9D9D9" />
+                </mask>
+                <g mask="url(#mask0_687_58555)">
+                  <path
+                    d="M6.39916 18.3108L5.69141 17.6031L11.2914 12.0031L5.69141 6.40306L6.39916 5.69531L11.9992 11.2953L17.5992 5.69531L18.3069 6.40306L12.7069 12.0031L18.3069 17.6031L17.5992 18.3108L11.9992 12.7108L6.39916 18.3108Z"
+                    fill="#1C1B1F" />
+                </g>
+              </svg>
+
+            </button>
+          </div>
+
+          <!-- Content with items -->
+          <div class="cart-content" id="cartContent">
+            <!-- Cart Item 1 -->
+            <div class="cart-item">
+              <div class="item-favorite">
+                <svg viewBox="0 0 24 24" onclick="heart_icon(this)">
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                  </path>
+                </svg>
+              </div>
+              <div class="item-image">
+                <img src="/images/karzinka-modal_img.png" alt="Кожаная сумка">
+              </div>
+              <div class="item-details">
+                <div class="item-name">НАЗВАНИЕ ТОВАРА</div>
+                <div class="item-specs">
+                  <div class="item-spec">Цвет: Коричневый</div>
+                  <div class="item-spec">Материал: Кожа</div>
+                  <div class="item-spec">Размер: 36x25x18 (М)</div>
+                  <div class="item-price">
+                    <div class="item-price-old">29 900 ₽</div>
+                    <div class="item-price-current">20 400 ₽</div>
+                  </div>
+                </div>
+                <div class="item-bottom">
+                  <button class="item-remove">УДАЛИТЬ</button>
+
+                </div>
+              </div>
+            </div>
+            <!--  -->
+            <div class="cart-item">
+              <div class="item-favorite">
+                <svg viewBox="0 0 24 24" onclick="heart_icon(this)">
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                  </path>
+                </svg>
+              </div>
+              <div class="item-image">
+                <img src="/images/karzinka-modal_img.png" alt="Кожаная сумка">
+              </div>
+              <div class="item-details">
+                <div class="item-name">НАЗВАНИЕ ТОВАРА</div>
+                <div class="item-specs">
+                  <div class="item-spec">Цвет: Коричневый</div>
+                  <div class="item-spec">Материал: Кожа</div>
+                  <div class="item-spec">Размер: 36x25x18 (М)</div>
+                  <div class="item-price">
+                    <div class="item-price-old">29 900 ₽</div>
+                    <div class="item-price-current">20 400 ₽</div>
+                  </div>
+                </div>
+                <div class="item-bottom">
+                  <button class="item-remove">УДАЛИТЬ</button>
+
+                </div>
+              </div>
+            </div>
+
+            <!-- Cart Item  -->
+            <div class="cart-item">
+              <div class="item-favorite">
+                <svg viewBox="0 0 24 24" onclick="heart_icon(this)">
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                  </path>
+                </svg>
+              </div>
+              <div class="item-image">
+                <img src="/images/karzinka-modal_img.png" alt="Кожаная сумка">
+              </div>
+              <div class="item-details">
+                <div class="item-name">НАЗВАНИЕ ТОВАРА</div>
+                <div class="item-specs">
+                  <div class="item-spec">Цвет: Коричневый</div>
+                  <div class="item-spec">Материал: Кожа</div>
+                  <div class="item-spec">Размер: 36x25x18 (М)</div>
+                  <div class="item-price">
+                    <div class="item-price-old">29 900 ₽</div>
+                    <div class="item-price-current">20 400 ₽</div>
+                  </div>
+                </div>
+                <div class="item-bottom">
+                  <button class="item-remove">УДАЛИТЬ</button>
+
+                </div>
+              </div>
+            </div>
+
+            <!-- Cart Item  -->
+            <div class="cart-item">
+              <div class="item-favorite">
+                <svg onclick="heart_icon(this)" viewBox="0 0 24 24">
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                  </path>
+                </svg>
+              </div>
+              <div class="item-image">
+                <img src="/images/karzinka-modal_img.png" alt="Кожаная сумка">
+              </div>
+              <div class="item-details">
+                <div class="item-name">НАЗВАНИЕ ТОВАРА</div>
+                <div class="item-specs">
+                  <div class="item-spec">Цвет: Коричневый</div>
+                  <div class="item-spec">Материал: Кожа</div>
+                  <div class="item-spec">Размер: 36x25x18 (М)</div>
+                  <div class="item-price">
+                    <div class="item-price-old">29 900 ₽</div>
+                    <div class="item-price-current">20 400 ₽</div>
+                  </div>
+                </div>
+                <div class="item-bottom">
+                  <button class="item-remove">УДАЛИТЬ</button>
+
+                </div>
+              </div>
+            </div>
+            <!-- Cart Item  -->
+            <div class="cart-item">
+              <div class="item-favorite">
+                <svg onclick="heart_icon(this)" viewBox="0 0 24 24">
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                  </path>
+                </svg>
+              </div>
+              <div class="item-image">
+                <img src="/images/karzinka-modal_img.png" alt="Кожаная сумка">
+              </div>
+              <div class="item-details">
+                <div class="item-name">НАЗВАНИЕ ТОВАРА</div>
+                <div class="item-specs">
+                  <div class="item-spec">Цвет: Коричневый</div>
+                  <div class="item-spec">Материал: Кожа</div>
+                  <div class="item-spec">Размер: 36x25x18 (М)</div>
+                  <div class="item-price">
+                    <div class="item-price-old">29 900 ₽</div>
+                    <div class="item-price-current">20 400 ₽</div>
+                  </div>
+                </div>
+                <div class="item-bottom">
+                  <button class="item-remove">УДАЛИТЬ</button>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Footer -->
+          <div class="cart-footer">
+            <div class="cart-total">
+              <div class="cart-total-label">ИТОГО</div>
+              <div class="cart-total-price">40 800 ₽</div>
+            </div>
+            <div class="cart-actions">
+              <button class="cart-btn cart-btn-secondary">ПРОДОЛЖИТЬ ПОКУПКИ</button>
+              <button class="cart-btn cart-btn-primary">КУПИТЬ</button>
+            </div>
+          </div>
+
+          <!-- Empty cart state (hidden by default) -->
+          <div class="empty-cart" id="emptyCart" style="display: none;">
+            <div class="empty-cart-title">КОРЗИНА ПУСТА</div>
+            <div class="empty-cart-text">
+              Пора добавить немного стиля.<br>
+              Подберем классную сумку?
+            </div>
+            <button class="empty-cart-btn">В КАТАЛОГ</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="{{ asset('assets/vendor/jquery-3.7.1.min.js') }}"></script>
+    <script src="{{ asset('assets/vendor/bootstrap/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('assets/vendor/swiper/swiper-bundle.min.js') }}"></script>
+    <script src="{{ asset('assets/vendor/jquery.inputmask.min.js') }}"></script>
+    <script src="{{ asset('assets/vendor/moment-timezone-with-data.min.js') }}"></script>
+    <script src="{{ asset('assets/vendor/moment.min.js') }}"></script>
+    <script src="{{ asset('assets/js/script.js') }}"></script>
 </body>
 </html>

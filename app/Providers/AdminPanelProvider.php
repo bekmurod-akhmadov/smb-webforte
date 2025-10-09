@@ -3,7 +3,6 @@
 namespace App\Providers;
 
 use App\Filament\Pages\Settings\Settings;
-use Awcodes\Curator\CuratorPlugin;
 use BezhanSalleh\FilamentShield\FilamentShieldPlugin;
 use DiogoGPinto\AuthUIEnhancer\AuthUIEnhancerPlugin;
 use Filament\Enums\ThemeMode;
@@ -57,15 +56,7 @@ class AdminPanelProvider extends PanelProvider
                     ->sort(2),
             ])
             ->plugins([
-                CuratorPlugin::make()
-                    ->label(fn () => __('app.label.media'))
-                    ->pluralLabel(fn () => __('app.label.media_library'))
-                    ->navigationIcon('heroicon-o-photo')
-                    ->navigationGroup(fn () => __('app.label.media'))
-                    ->navigationCountBadge(),
-
-                FilamentPeekPlugin::make()
-                    ->disablePluginStyles(),
+                FilamentPeekPlugin::make(),
 
                 FilamentSettingsPlugin::make()
                     ->pages([

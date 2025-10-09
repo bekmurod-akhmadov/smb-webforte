@@ -15,4 +15,8 @@ class SiteController extends Controller
     {
         return view('pages.about');
     }
+    public function search()
+    {
+        return view('pages.search');
+    }
 }

@@ -3,16 +3,13 @@
 
 @endphp
 
-@if(isset($menus[null]) || isset($menus['']))
+@if(isset($menus[Menu::GROUP_NAVIGATION]))
+
   <div class="footer_top-item">
     <ul>
 
-      @foreach($menus as $menu)
-
-        <li>
-          <a href="{{$menu->url}}"  target="{{ $menu->target }}">{{$menu->title}}</a>
-        </li>
-
+      @foreach($menus[Menu::GROUP_NAVIGATION] as $menu)
+        <li><a href="{{ $menu->url }}" target="{{ $menu->target }}">{{ $menu->title }}</a></li>
       @endforeach
 
     </ul>

@@ -83,7 +83,7 @@
       </div>
       <!-- Right Actions -->
       <div class="navbar-actions">
-        <a href="search.html" class="action-btn search-btn d-none d-lg-block">
+        <a href="{{route('search')}}" class="action-btn search-btn d-none d-lg-block">
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"
                fill="none">
             <path

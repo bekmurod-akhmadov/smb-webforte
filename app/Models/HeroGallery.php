@@ -3,9 +3,13 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Spatie\MediaLibrary\HasMedia;
+use Spatie\MediaLibrary\InteractsWithMedia;
 
-class HeroGallery extends Model
+class HeroGallery extends Model implements HasMedia
 {
+    use InteractsWithMedia;
+
     protected $table = 'hero_galleries';
 
     public const STATUS_ACTIVE = 1;
@@ -16,8 +20,6 @@ class HeroGallery extends Model
 
     protected $fillable = [
         'type',
-        'desktop_file',
-        'mobile_file',
         'sort',
         'status',
     ];
@@ -41,5 +43,30 @@ class HeroGallery extends Model
             self::TYPE_IMAGE => __('app.label.type_image'),
             self::TYPE_VIDEO => __('app.label.type_video'),
         ];
+    }
+
+    /** ───── Media Collections ───── */
+    public function registerMediaCollections(): void
+    {
+        $this
+            ->addMediaCollection('desktop')
+            ->singleFile()
+            ->registerMediaConversions(function () {
+                $this->addMediaConversion('optimized')
+                    ->format('webp')
+                    ->quality(80)
+                    ->nonQueued();
+            });
+
+        $this
+            ->addMediaCollection('mobile')
+            ->singleFile()
+            ->registerMediaConversions(function () {
+                $this->addMediaConversion('optimized')
+                    ->format('webp')
+                    ->quality(80)
+                    ->nonQueued();
+            });
+
     }
 }

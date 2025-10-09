@@ -12,7 +12,16 @@
   <!-- CSRF Token -->
   <meta name="csrf-token" content="{{ csrf_token() }}">
 
-  @vite(['resources/css/app.css', 'resources/js/app.js'])
+{{--  @vite(['resources/css/app.css', 'resources/js/app.js'])--}}
+
+
+  <!-- Подключение ассетов из public/assets -->
+  <link rel="stylesheet" href="{{ asset('assets/vendor/bootstrap/bootstrap.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/vendor/swiper/swiper-bundle.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/css/all.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/css/index.css') }}">
+
+{{--  <script src="{{ asset('assets/js/profile.js') }}"></script>--}}
 
   <title>
     @yield('title', setting('seo.title')[app()->getLocale()] ?? config('app.name'))

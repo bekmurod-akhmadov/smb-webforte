@@ -64,48 +64,38 @@ class HeroGalleryResource extends Resource
                                 // Desktop image
                                 Forms\Components\FileUpload::make('desktop_file')
                                     ->label(__('app.label.desktop_image'))
-                                    ->directory('uploads/hero-gallery/desktop')
-                                    ->visible(fn (Get $get) => $get('type') === 'image')
-                                    ->required(fn (Get $get) => $get('type') === 'image')
+                                    ->directory('uploads/hero-gallery/temp/desktop')
+                                    ->visible(fn (Forms\Get $get) => $get('type') === 'image')
+                                    ->required(fn (Forms\Get $get) => $get('type') === 'image')
                                     ->image()
                                     ->imageEditor()
-                                    ->imageEditorMode(3)
-                                    ->optimize('png'),
+                                    ->imageEditorMode(3),
 
                                 // Desktop video
                                 Forms\Components\FileUpload::make('desktop_file')
                                     ->label(__('app.label.desktop_video'))
-                                    ->directory('uploads/hero-gallery/desktop')
-                                    ->visible(fn (Get $get) => $get('type') === 'video')
-                                    ->required(fn (Get $get) => $get('type') === 'video')
+                                    ->directory('uploads/hero-gallery/temp/desktop')
+                                    ->visible(fn (Forms\Get $get) => $get('type') === 'video')
+                                    ->required(fn (Forms\Get $get) => $get('type') === 'video')
                                     ->acceptedFileTypes(['video/mp4', 'video/webm'])
-                                    ->mimeTypeMap([
-                                        'mp4'  => 'video/mp4',
-                                        'webm' => 'video/webm',
-                                    ])
                                     ->maxSize(51200),
 
                                 // Mobile image
                                 Forms\Components\FileUpload::make('mobile_file')
                                     ->label(__('app.label.mobile_image'))
-                                    ->directory('uploads/hero-gallery/mobile')
-                                    ->visible(fn (Get $get) => $get('type') === 'image')
-                                    ->required(fn (Get $get) => $get('type') === 'image')
+                                    ->directory('uploads/hero-gallery/temp/mobile')
+                                    ->visible(fn (Forms\Get $get) => $get('type') === 'image')
+                                    ->required(fn (Forms\Get $get) => $get('type') === 'image')
                                     ->image()
                                     ->imageEditor()
-                                    ->imageEditorMode(3)
-                                    ->optimize('png'),
+                                    ->imageEditorMode(3),
 
                                 // Mobile video
                                 Forms\Components\FileUpload::make('mobile_file')
                                     ->label(__('app.label.mobile_video'))
-                                    ->directory('uploads/hero-gallery/mobile')
-                                    ->visible(fn (Get $get) => $get('type') === 'video')
+                                    ->directory('uploads/hero-gallery/temp/mobile')
+                                    ->visible(fn (Forms\Get $get) => $get('type') === 'video')
                                     ->acceptedFileTypes(['video/mp4', 'video/webm'])
-                                    ->mimeTypeMap([
-                                        'mp4'  => 'video/mp4',
-                                        'webm' => 'video/webm',
-                                    ])
                                     ->maxSize(51200),
                             ]),
 
@@ -123,7 +113,6 @@ class HeroGalleryResource extends Resource
                     ]),
             ]);
     }
-
     public static function table(Table $table): Table
     {
         return $table

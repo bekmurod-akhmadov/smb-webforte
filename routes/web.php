@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SiteController;
 use Illuminate\Support\Facades\Route;
 use Livewire\Livewire;
@@ -27,5 +26,7 @@ Route::group(
     function () {
         Route::get('/', [SiteController::class, 'index'])->name('home');
         Route::get('/about', [SiteController::class, 'about'])->name('about');
+        Route::get('/search', [SiteController::class, 'search'])->name('search');
+
     }
 );

@@ -15,8 +15,6 @@ function withOpacityValue(variable) {
 export default {
     content: [
         "./resources/**/*.blade.php",
-        './vendor/cmsmaxinc/filament-system-versions/resources/**/*.blade.php',
-        './vendor/awcodes/filament-curator/resources/**/*.blade.php',
         "./app/Filament/**/*.php",
         "./resources/views/filament/**/*.blade.php",
         "./vendor/filament/**/*.blade.php",
