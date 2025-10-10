@@ -2,6 +2,15 @@
 
 return [
     'label' => [
+        'subcategory' => 'Подкатегория',
+        'price'       => 'Цена',
+        'preview_image' => 'Превью изображение',
+        'product_single' => 'Товар',
+        'product_plural' => 'Товары',
+        'subcategory_single' => 'Подкатегория',
+        'subcategory_plural' => 'Подкатегории',
+        'category_single' => 'Категория',
+        'category_plural' => 'Категории',
         'page_blocks' => 'Блоки страниц',
         'common_elements' => 'Общие элементы',
         'page_home' => 'Главная',

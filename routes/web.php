@@ -1,9 +1,11 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SiteController;
+use App\Http\Controllers\SubCategoryController;
 use Illuminate\Support\Facades\Route;
 use Livewire\Livewire;
-use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 /* NOTE: Do Not Remove
 / Livewire asset handling if using sub folder in domain
@@ -27,6 +29,16 @@ Route::group(
         Route::get('/', [SiteController::class, 'index'])->name('home');
         Route::get('/about', [SiteController::class, 'about'])->name('about');
         Route::get('/search', [SiteController::class, 'search'])->name('search');
+
+        Route::get('/{category:slug}', [CategoryController::class, 'show'])
+            ->name('category.show');
+
+        Route::get('/{category:slug}/{subcategory:slug}', [SubcategoryController::class, 'show'])
+            ->name('subcategory.show');
+
+        Route::get('/{category:slug}/{subcategory:slug}/{product:slug}', [ProductController::class, 'show'])
+            ->name('product.show');
+
 
     }
 );

@@ -2,6 +2,15 @@
 
 return [
     'label' => [
+        'subcategory' => 'Subcategory',
+        'price'       => 'Price',
+        'preview_image' => 'Preview Image',
+        'product_single' => 'Product',
+        'product_plural' => 'Products',
+        'subcategory_single' => 'Subcategory',
+        'subcategory_plural' => 'Subcategories',
+        'category_single' => 'Category',
+        'category_plural' => 'Categories',
         'page_blocks' => 'Page Blocks',
         'common_elements' => 'Common Elements',
         'page_home' => 'Home',
