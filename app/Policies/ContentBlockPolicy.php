@@ -3,10 +3,10 @@
 namespace App\Policies;
 
 use App\Models\User;
-use App\Models\TextBlock;
+use App\Models\ContentBlock;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
-class TextBlockPolicy
+class ContentBlockPolicy
 {
     use HandlesAuthorization;
 
@@ -15,15 +15,15 @@ class TextBlockPolicy
      */
     public function viewAny(User $user): bool
     {
-        return $user->can('view_any_text::block');
+        return $user->can('view_any_content::block');
     }
 
     /**
      * Determine whether the user can view the model.
      */
-    public function view(User $user, TextBlock $textBlock): bool
+    public function view(User $user, ContentBlock $contentBlock): bool
     {
-        return $user->can('view_text::block');
+        return $user->can('view_content::block');
     }
 
     /**
@@ -31,23 +31,23 @@ class TextBlockPolicy
      */
     public function create(User $user): bool
     {
-        return $user->can('create_text::block');
+        return $user->can('create_content::block');
     }
 
     /**
      * Determine whether the user can update the model.
      */
-    public function update(User $user, TextBlock $textBlock): bool
+    public function update(User $user, ContentBlock $contentBlock): bool
     {
-        return $user->can('update_text::block');
+        return $user->can('update_content::block');
     }
 
     /**
      * Determine whether the user can delete the model.
      */
-    public function delete(User $user, TextBlock $textBlock): bool
+    public function delete(User $user, ContentBlock $contentBlock): bool
     {
-        return $user->can('delete_text::block');
+        return $user->can('delete_content::block');
     }
 
     /**
@@ -55,15 +55,15 @@ class TextBlockPolicy
      */
     public function deleteAny(User $user): bool
     {
-        return $user->can('delete_any_text::block');
+        return $user->can('delete_any_content::block');
     }
 
     /**
      * Determine whether the user can permanently delete.
      */
-    public function forceDelete(User $user, TextBlock $textBlock): bool
+    public function forceDelete(User $user, ContentBlock $contentBlock): bool
     {
-        return $user->can('force_delete_text::block');
+        return $user->can('force_delete_content::block');
     }
 
     /**
@@ -71,15 +71,15 @@ class TextBlockPolicy
      */
     public function forceDeleteAny(User $user): bool
     {
-        return $user->can('force_delete_any_text::block');
+        return $user->can('force_delete_any_content::block');
     }
 
     /**
      * Determine whether the user can restore.
      */
-    public function restore(User $user, TextBlock $textBlock): bool
+    public function restore(User $user, ContentBlock $contentBlock): bool
     {
-        return $user->can('restore_text::block');
+        return $user->can('restore_content::block');
     }
 
     /**
@@ -87,15 +87,15 @@ class TextBlockPolicy
      */
     public function restoreAny(User $user): bool
     {
-        return $user->can('restore_any_text::block');
+        return $user->can('restore_any_content::block');
     }
 
     /**
      * Determine whether the user can replicate.
      */
-    public function replicate(User $user, TextBlock $textBlock): bool
+    public function replicate(User $user, ContentBlock $contentBlock): bool
     {
-        return $user->can('replicate_text::block');
+        return $user->can('replicate_content::block');
     }
 
     /**
@@ -103,6 +103,6 @@ class TextBlockPolicy
      */
     public function reorder(User $user): bool
     {
-        return $user->can('reorder_text::block');
+        return $user->can('reorder_content::block');
     }
 }

@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 class HeroGallery extends Model implements HasMedia
 {
@@ -50,23 +51,19 @@ class HeroGallery extends Model implements HasMedia
     {
         $this
             ->addMediaCollection('desktop')
-            ->singleFile()
-            ->registerMediaConversions(function () {
-                $this->addMediaConversion('optimized')
-                    ->format('webp')
-                    ->quality(80)
-                    ->nonQueued();
-            });
+            ->singleFile();
 
         $this
             ->addMediaCollection('mobile')
-            ->singleFile()
-            ->registerMediaConversions(function () {
-                $this->addMediaConversion('optimized')
-                    ->format('webp')
-                    ->quality(80)
-                    ->nonQueued();
-            });
-
+            ->singleFile();
     }
+
+    public function registerMediaConversions(?Media $media = null): void
+    {
+        $this->addMediaConversion('optimized')
+            ->format('webp')
+            ->quality(80)
+            ->nonQueued();
+    }
+
 }

@@ -11,13 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('text_blocks', function (Blueprint $table) {
+        Schema::create('content_blocks', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('title');
-            $table->string('content')->nullable();
-            $table->string('image')->nullable();
-            $table->boolean('status')->default(true)->index();
+            $table->string('key')->unique();
+            $table->text('text')->nullable();
+            $table->string('button_text')->nullable();
+            $table->string('button_link')->nullable();
             $table->timestamps();
         });
     }
@@ -27,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('text_blocks');
+        Schema::dropIfExists('content_blocks');
     }
 };

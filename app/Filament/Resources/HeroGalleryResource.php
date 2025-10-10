@@ -11,6 +11,8 @@ use Filament\Forms\Form;
 use Filament\Forms\Get;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Columns\SpatieMediaLibraryImageColumn;
+use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
@@ -37,7 +39,7 @@ class HeroGalleryResource extends Resource
 
     public static function getPluralModelLabel(): string
     {
-        return __('app.label.hero_gallery_single_plural');
+        return __('app.label.hero_gallery_plural');
     }
 
     public static function getNavigationBadge(): ?string
@@ -52,8 +54,10 @@ class HeroGalleryResource extends Resource
                 Forms\Components\Grid::make()
                     ->columns(2)
                     ->schema([
+
                         Forms\Components\Section::make(__('app.label.files'))
                             ->schema([
+
                                 Forms\Components\Select::make('type')
                                     ->label(__('app.label.type'))
                                     ->options(HeroGallery::typeOptions())
@@ -61,51 +65,54 @@ class HeroGalleryResource extends Resource
                                     ->required()
                                     ->reactive(),
 
-                                Forms\Components\FileUpload::make('desktop_file')
+                                // Desktop image
+                                Forms\Components\SpatieMediaLibraryFileUpload::make('desktop')
+                                    ->collection('desktop')
                                     ->label(__('app.label.desktop_image'))
-                                    ->directory('uploads/hero-gallery/')
                                     ->visible(fn (Forms\Get $get) => $get('type') === 'image')
                                     ->required(fn (Forms\Get $get) => $get('type') === 'image')
                                     ->image()
-                                    ->openable()
-                                    ->visibility('public')
                                     ->downloadable()
+                                    ->openable()
                                     ->imageEditor()
-                                    ->imageEditorMode(3),
+                                    ->imageEditorMode(3)
+                                    ->optimize('png')
+                                    ->acceptedFileTypes(['image/png']),
 
-                                Forms\Components\FileUpload::make('desktop_file')
+                                // Desktop video
+                                Forms\Components\SpatieMediaLibraryFileUpload::make('desktop')
+                                    ->collection('desktop')
                                     ->label(__('app.label.desktop_video'))
-                                    ->directory('uploads/hero-gallery/')
                                     ->visible(fn (Forms\Get $get) => $get('type') === 'video')
                                     ->required(fn (Forms\Get $get) => $get('type') === 'video')
                                     ->acceptedFileTypes(['video/mp4', 'video/webm'])
-                                    ->openable()
                                     ->downloadable()
-                                    ->visibility('public')
+                                    ->openable()
                                     ->maxSize(51200),
 
-                                Forms\Components\FileUpload::make('mobile_file')
+                                // Mobile image
+                                Forms\Components\SpatieMediaLibraryFileUpload::make('mobile')
+                                    ->collection('mobile')
                                     ->label(__('app.label.mobile_image'))
-                                    ->directory('uploads/hero-gallery/')
                                     ->visible(fn (Forms\Get $get) => $get('type') === 'image')
                                     ->required(fn (Forms\Get $get) => $get('type') === 'image')
                                     ->image()
-                                    ->imageEditor()
                                     ->downloadable()
                                     ->openable()
-                                    ->visibility('public')
-                                    ->imageEditorMode(3),
+                                    ->imageEditor()
+                                    ->imageEditorMode(3)
+                                    ->optimize('png')
+                                    ->acceptedFileTypes(['image/png']),
 
-                                Forms\Components\FileUpload::make('mobile_file')
+                                // Mobile video
+                                Forms\Components\SpatieMediaLibraryFileUpload::make('mobile')
+                                    ->collection('mobile')
                                     ->label(__('app.label.mobile_video'))
-                                    ->directory('uploads/hero-gallery/')
                                     ->visible(fn (Forms\Get $get) => $get('type') === 'video')
                                     ->acceptedFileTypes(['video/mp4', 'video/webm'])
-                                    ->openable()
                                     ->downloadable()
-                                    ->visibility('public')
+                                    ->openable()
                                     ->maxSize(51200),
-
                             ]),
 
                         Forms\Components\Section::make(__('app.label.settings'))
@@ -126,15 +133,53 @@ class HeroGalleryResource extends Resource
     public static function table(Table $table): Table
     {
         return $table
+            ->defaultSort('updated_at', 'desc')
             ->columns([
-                //
+                SpatieMediaLibraryImageColumn::make('desktop')
+                ->collection('desktop')
+                    ->label(__('app.label.desktop_image'))
+                    ->square()
+                    ->height(75),
+
+                SpatieMediaLibraryImageColumn::make('mobile')
+                ->collection('mobile')
+                    ->label(__('app.label.mobile_image'))
+                    ->disk('public')
+                    ->square()
+                    ->height(75),
+
+                Tables\Columns\TextColumn::make('sort')
+                    ->label(__('app.label.sort'))
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
+
+                Tables\Columns\ToggleColumn::make('status')
+                    ->label(__('app.label.status'))
+                    ->sortable()
+                    ->onIcon('heroicon-m-check-circle')
+                    ->offIcon('heroicon-m-x-circle')
+                    ->onColor('success')
+                    ->offColor('danger'),
+
+                Tables\Columns\TextColumn::make('created_at')
+                    ->label(__('app.label.created'))
+                    ->dateTime('d.m.Y H:i')
+                    ->toggleable(),
+
+                Tables\Columns\TextColumn::make('updated_at')
+                    ->label(__('app.label.updated'))
+                    ->dateTime('d.m.Y H:i')
+                    ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
-                //
+                SelectFilter::make('status')
+                    ->label(__('app.label.status'))
+                    ->options(HeroGallery::statusOptions()),
             ])
             ->actions([
                 Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([

@@ -154,14 +154,14 @@ function initializeHeroSwiper() {
   const heroSwiperContainer = document.querySelector(".heroSwiper");
   if (!heroSwiperContainer) return;
 
-  heroSwiper = new Swiper(".heroSwiper", {
+  const autoplayEnabled = heroSwiperContainer.dataset.autoplay === "true";
+  const autoplayDelay = parseInt(heroSwiperContainer.dataset.delay, 10) || 5000;
+
+  heroSwiper = new Swiper(heroSwiperContainer, {
     slidesPerView: 1,
     spaceBetween: 0,
     loop: true,
-    autoplay: {
-      delay: 4000,
-      disableOnInteraction: false,
-    },
+    autoplay: autoplayEnabled ? { delay: autoplayDelay, disableOnInteraction: false } : false,
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",

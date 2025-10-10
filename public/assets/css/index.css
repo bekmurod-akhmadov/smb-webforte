@@ -1301,8 +1301,6 @@ li {
   text-decoration: none;
   padding: 0;
   margin: 0;
-  font-size: medium;
-  line-height: 100%;
 }
 
 label {
@@ -2430,24 +2428,24 @@ section {
     margin-bottom: 16px;
   }
 }
-.deliver .block .box p {
-  color: var(--White, #fff);
-  font-family: "Helvetica Neue", sans-serif;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 130%;
-  /* 18.2px */
-}
-@media screen and (max-width: 768px) {
-  .deliver .block .box p {
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 140%;
-    margin-top: 0;
-  }
-}
+/*.deliver .block .box p {*/
+/*  color: var(--White, #fff);*/
+/*  font-family: "Helvetica Neue", sans-serif;*/
+/*  font-size: 14px;*/
+/*  font-style: normal;*/
+/*  font-weight: 400;*/
+/*  line-height: 130%;*/
+/*  !* 18.2px *!*/
+/*}*/
+/*@media screen and (max-width: 768px) {*/
+/*  .deliver .block .box p {*/
+/*    font-size: 12px;*/
+/*    font-style: normal;*/
+/*    font-weight: 400;*/
+/*    line-height: 140%;*/
+/*    margin-top: 0;*/
+/*  }*/
+/*}*/
 .deliver .block .box a {
   display: flex;
   width: 260px;

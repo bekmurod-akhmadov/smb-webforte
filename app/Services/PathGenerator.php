@@ -11,7 +11,7 @@ class PathGenerator implements \Spatie\MediaLibrary\Support\PathGenerator\PathGe
     {
         $modelName = Str::kebab(class_basename($media->model_type));
 
-        return "{$modelName}/{$media->model_id}/";
+        return "/uploads/{$modelName}/{$media->model_id}/";
     }
 
     public function getPathForConversions(Media $media): string

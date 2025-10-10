@@ -2,12 +2,9 @@
 
 namespace App\Filament\Pages\Settings;
 
-use AbdulmajeedJamaan\FilamentTranslatableTabs\TranslatableTabs;
 use Closure;
 
 use Filament\Forms;
-use Filament\Forms\Form;
-use Filament\Forms\Get;
 use Illuminate\Support\Facades\Storage;
 use Outerweb\FilamentSettings\Filament\Pages\Settings as BaseSettings;
 
@@ -37,7 +34,6 @@ class Settings extends BaseSettings
     {
         return [
             Forms\Components\Tabs::make(__('app.label.settings'))
-                ->persistTabInQueryString()
                 ->schema([
                     Forms\Components\Tabs\Tab::make(__('app.label.tab_seo'))
                         ->schema([

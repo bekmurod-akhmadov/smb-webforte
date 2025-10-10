@@ -11,11 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('hero_galleries', function (Blueprint $table) {
+        Schema::create('handbag_gallery', function (Blueprint $table) {
             $table->id();
-            $table->string('type')->default('image');
+            $table->string('image')->nullable();
+            $table->string('username')->nullable();
+            $table->text('text')->nullable();
+            $table->unsignedTinyInteger('style')->default(0);
             $table->unsignedInteger('sort')->default(0);
-            $table->boolean('status')->default(true)->index();
+            $table->boolean('status')->default(true);
             $table->timestamps();
         });
     }
@@ -25,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('hero_galleries');
+        Schema::dropIfExists('handbag_gallery');
     }
 };

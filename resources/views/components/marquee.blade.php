@@ -1,4 +1,4 @@
-@if($marquees->isNotEmpty())
+@if (setting('blocks.marquee') && $marquees->isNotEmpty())
   <!-- Top Marquee Banner -->
   <div class="top-banner">
     <div class="marquee-container">

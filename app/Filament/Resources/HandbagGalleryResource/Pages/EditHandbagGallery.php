@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Filament\Resources\TextBlockResource\Pages;
+namespace App\Filament\Resources\HandbagGalleryResource\Pages;
 
-use App\Filament\Resources\TextBlockResource;
+use App\Filament\Resources\HandbagGalleryResource;
 use Filament\Actions;
 use Filament\Resources\Pages\EditRecord;
 
-class EditTextBlock extends EditRecord
+class EditHandbagGallery extends EditRecord
 {
-    protected static string $resource = TextBlockResource::class;
+    protected static string $resource = HandbagGalleryResource::class;
 
     protected function getHeaderActions(): array
     {
