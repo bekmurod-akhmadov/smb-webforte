@@ -61,42 +61,51 @@ class HeroGalleryResource extends Resource
                                     ->required()
                                     ->reactive(),
 
-                                // Desktop image
                                 Forms\Components\FileUpload::make('desktop_file')
                                     ->label(__('app.label.desktop_image'))
-                                    ->directory('uploads/hero-gallery/temp/desktop')
+                                    ->directory('uploads/hero-gallery/')
                                     ->visible(fn (Forms\Get $get) => $get('type') === 'image')
                                     ->required(fn (Forms\Get $get) => $get('type') === 'image')
                                     ->image()
+                                    ->openable()
+                                    ->visibility('public')
+                                    ->downloadable()
                                     ->imageEditor()
                                     ->imageEditorMode(3),
 
-                                // Desktop video
                                 Forms\Components\FileUpload::make('desktop_file')
                                     ->label(__('app.label.desktop_video'))
-                                    ->directory('uploads/hero-gallery/temp/desktop')
+                                    ->directory('uploads/hero-gallery/')
                                     ->visible(fn (Forms\Get $get) => $get('type') === 'video')
                                     ->required(fn (Forms\Get $get) => $get('type') === 'video')
                                     ->acceptedFileTypes(['video/mp4', 'video/webm'])
+                                    ->openable()
+                                    ->downloadable()
+                                    ->visibility('public')
                                     ->maxSize(51200),
 
-                                // Mobile image
                                 Forms\Components\FileUpload::make('mobile_file')
                                     ->label(__('app.label.mobile_image'))
-                                    ->directory('uploads/hero-gallery/temp/mobile')
+                                    ->directory('uploads/hero-gallery/')
                                     ->visible(fn (Forms\Get $get) => $get('type') === 'image')
                                     ->required(fn (Forms\Get $get) => $get('type') === 'image')
                                     ->image()
                                     ->imageEditor()
+                                    ->downloadable()
+                                    ->openable()
+                                    ->visibility('public')
                                     ->imageEditorMode(3),
 
-                                // Mobile video
                                 Forms\Components\FileUpload::make('mobile_file')
                                     ->label(__('app.label.mobile_video'))
-                                    ->directory('uploads/hero-gallery/temp/mobile')
+                                    ->directory('uploads/hero-gallery/')
                                     ->visible(fn (Forms\Get $get) => $get('type') === 'video')
                                     ->acceptedFileTypes(['video/mp4', 'video/webm'])
+                                    ->openable()
+                                    ->downloadable()
+                                    ->visibility('public')
                                     ->maxSize(51200),
+
                             ]),
 
                         Forms\Components\Section::make(__('app.label.settings'))
@@ -113,6 +122,7 @@ class HeroGalleryResource extends Resource
                     ]),
             ]);
     }
+
     public static function table(Table $table): Table
     {
         return $table

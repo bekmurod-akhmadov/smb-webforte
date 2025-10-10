@@ -7,9 +7,14 @@ export default defineConfig({
       input: [
         "resources/css/app.css",
         "resources/js/app.js",
-        `resources/css/filament/theme.css`,
+        "resources/css/filament/theme.css",
       ],
       refresh: true,
     }),
   ],
+  server: {
+    host: "127.0.0.1",
+    port: 5173,
+    https: false,
+  },
 })
