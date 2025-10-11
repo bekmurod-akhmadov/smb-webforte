@@ -611,11 +611,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
 $(document).ready(function () {
   const colorImages = {
-    yellow: "assets/images/catalog_collection-section-yellow-bag.png",
-    pink: "assets/images/product-page_prink-bag.png",
-    brown: "assets/images/catalog_collection-section-brown-bag.png",
-    beige: "assets/images/product-page_white-bag.jpg",
-    navy: "assets/images/product-page_blue-bag.jpg",
+    yellow: "/images/catalog_collection-section-yellow-bag.png",
+    pink: "/images/product-page_prink-bag.png",
+    brown: "/images/catalog_collection-section-brown-bag.png",
+    beige: "/images/product-page_white-bag.jpg",
+    navy: "/images/product-page_blue-bag.jpg",
   };
 
   if ($('input[name="color"]').length && $("#main-image").length) {
@@ -746,11 +746,11 @@ if (document.querySelector("#product-info")) {
     $(document).ready(function () {
       // =================== 1. Color images mapping ===================
       const colorImages = {
-        yellow: "assets/images/catalog_collection-section-yellow-bag.png",
-        pink: "assets/images/product-page_prink-bag.png",
-        brown: "assets/images/catalog_collection-section-brown-bag.png",
-        beige: "assets/images/product-page_white-bag.jpg",
-        navy: "assets/images/product-page_blue-bag.jpg",
+        yellow: "/images/catalog_collection-section-yellow-bag.png",
+        pink: "/images/product-page_prink-bag.png",
+        brown: "/images/catalog_collection-section-brown-bag.png",
+        beige: "/images/product-page_white-bag.jpg",
+        navy: "/images/product-page_blue-bag.jpg",
       };
 
       // Color change functionality

@@ -3,7 +3,7 @@
     <x-head/>
 <body>
     <!-- WRAPPER -->
-    <div class="wrapper">
+    <div class="wrapper {{ $wrapperClass ?? '' }}">
       @yield('content')
     </div>
 

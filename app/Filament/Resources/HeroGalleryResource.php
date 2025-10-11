@@ -6,7 +6,6 @@ use App\Filament\Resources\HeroGalleryResource\Pages;
 use App\Filament\Resources\HeroGalleryResource\RelationManagers;
 use App\Models\HeroGallery;
 use Filament\Forms;
-use Awcodes\Curator\Components\Forms\CuratorPicker;
 use Filament\Forms\Form;
 use Filament\Forms\Get;
 use Filament\Resources\Resource;
