@@ -21,11 +21,13 @@ class CategoryResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
-    protected static ?int $navigationSort = 3;
+    protected static ?int $navigationSort = 2;
+
+    protected static ?string $navigationGroup = 'catalog';
 
     public static function getNavigationGroup(): ?string
     {
-        return __('app.label.resources');
+        return __('app.label.catalog');
     }
 
     public static function getModelLabel(): string

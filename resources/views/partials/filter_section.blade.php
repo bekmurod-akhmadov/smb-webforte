@@ -1,3 +1,38 @@
+<div class="main-content">
+  <div class="container">
+
+    <div class="filter-section">
+      <div class="product-categories">
+        {{-- ВСЕ (категория целиком) --}}
+        <a href="{{ route('category.show', $category->slug) }}"
+           class="category-item {{ request()->routeIs('category.show') ? 'active' : '' }}">
+          ВСЕ <span class="category-count">({{ $category->subcategories->sum(fn($s) => $s->products->count()) }})</span>
+        </a>
+
+        {{-- Подкатегории --}}
+        @foreach($subcategories as $subcategory)
+          <a href="{{ route('subcategory.show', [$subcategory->category->slug, $subcategory->slug]) }}"
+             class="category-item {{ request()->is($subcategory->category->slug.'/'.$subcategory->slug) ? 'active' : '' }}">
+            {{ $subcategory->name }}
+            @if($subcategory->products->isNotEmpty())
+              <span class="category-count">({{ $subcategory->products->count() }})</span>
+            @endif
+          </a>
+        @endforeach
+      </div>
+
+      <div class="filter-controls">
+        <button class="filter-btn" onclick="toggleFilterModal()">
+          ФИЛЬТРЫ
+
+          <img src="/images/filter_icon.svg" alt="" class="filter-icon">
+
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="filter-modal" id="filterModal">
   <div class="filter-content">
 

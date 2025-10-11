@@ -1957,7 +1957,6 @@ section {
 .collection-section .product-card {
   flex: 0 0 calc(25% - 3px);
   background: white;
-  overflow: hidden;
   position: relative;
 }
 .collection-section .product-image {

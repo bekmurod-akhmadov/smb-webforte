@@ -2,6 +2,37 @@
 
 return [
     'label' => [
+        'catalog' => 'Catalog',
+        'general' => 'General',
+        'prices' => 'Prices & Status',
+        'old_price' => 'Old Price',
+        'is_new' => 'New Arrival',
+        'sizes' => 'Sizes',
+        'product_sizes' => 'Product Sizes',
+        'size' => 'Size',
+        'dimensions' => 'Dimensions',
+        'texts' => 'Texts',
+        'material_description' => 'Material',
+        'care_description' => 'Care',
+        'delivery_description' => 'Delivery',
+        'capacity' => 'Capacity',
+        'images' => 'Images',
+        'gallery' => 'Gallery',
+        'variants' => 'Variants',
+        'product_variants' => 'Product Variants',
+        'color_name' => 'Color Name',
+        'color_code' => 'Color Code',
+        'variant_image' => 'Variant Image',
+        'seo' => 'SEO',
+        'meta_title' => 'Meta Title',
+        'meta_description' => 'Meta Description',
+
+
+
+        'product_size_single' => 'Size',
+        'product_size_plural' => 'Sizes',
+        'product_material_single' => 'Material',
+        'product_material_plural' => 'Materials',
         'subcategory' => 'Subcategory',
         'price'       => 'Price',
         'preview_image' => 'Preview Image',

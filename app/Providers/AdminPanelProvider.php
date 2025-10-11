@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Filament\Pages\Settings\Settings;
 use BezhanSalleh\FilamentShield\FilamentShieldPlugin;
+use CmsMulti\FilamentClearCache\FilamentClearCachePlugin;
 use DiogoGPinto\AuthUIEnhancer\AuthUIEnhancerPlugin;
 use Filament\Enums\ThemeMode;
 use Filament\Http\Middleware\Authenticate;
@@ -58,6 +59,8 @@ class AdminPanelProvider extends PanelProvider
             ->plugins([
                 FilamentPeekPlugin::make(),
 
+                FilamentClearCachePlugin::make(),
+
                 FilamentSettingsPlugin::make()
                     ->pages([
                         Settings::class,
@@ -100,7 +103,7 @@ class AdminPanelProvider extends PanelProvider
                     ->label(fn () => __('app.label.resources')),
 
                 NavigationGroup::make()
-                    ->label(fn () => __('app.label.media')),
+                    ->label(fn () => __('app.label.catalog')),
 
                 NavigationGroup::make()
                     ->label(fn () => __('app.label.settings')),

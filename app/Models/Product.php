@@ -15,16 +15,32 @@ class Product extends Model implements HasMedia
     protected $fillable = [
         'category_id',
         'subcategory_id',
+        'materials',
+        'sizes',
+        'is_new',
         'name',
         'slug',
         'price',
-        'status',
+        'old_price',
+        'description',
+        'material_description',
+        'care_description',
+        'delivery_description',
+        'capacity',
         'sort',
+        'status',
+        'meta_title',
+        'meta_description',
     ];
 
     protected $casts = [
         'status' => 'boolean',
+        'is_new' => 'boolean',
         'price' => 'decimal:2',
+        'old_price' => 'decimal:2',
+        'materials' => 'array',
+        'sizes' => 'array',
+        'delivery_description' => 'array',
     ];
 
     public const STATUS_ACTIVE   = 1;
@@ -48,10 +64,21 @@ class Product extends Model implements HasMedia
         return $this->belongsTo(Subcategory::class);
     }
 
+    public function variants()
+    {
+        return $this->hasMany(ProductVariant::class);
+    }
+
+    public function sizeValues()
+    {
+        return $this->hasMany(ProductSizeValue::class, 'product_id');
+    }
+
     public function registerMediaCollections(): void
     {
         $this->addMediaCollection('preview_image')
             ->singleFile();
-    }
 
+        $this->addMediaCollection('gallery');
+    }
 }

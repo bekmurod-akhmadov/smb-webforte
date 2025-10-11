@@ -20,6 +20,7 @@
   <link rel="stylesheet" href="{{ asset('assets/vendor/swiper/swiper-bundle.min.css') }}">
   <link rel="stylesheet" href="{{ asset('assets/css/all.min.css') }}">
   <link rel="stylesheet" href="{{ asset('assets/css/index.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/css/custom.css') }}">
 
 {{--  <script src="{{ asset('assets/js/profile.js') }}"></script>--}}
 

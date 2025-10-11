@@ -22,7 +22,7 @@ class SubCategoryController extends Controller
 
         return view('pages.subcategory.show', [
             'category'    => $category,
-            'subcategory'=> $subcategory,
+            'subcategories'=> $subcategory,
             'products'   => $products,
         ]);
     }
