@@ -9,21 +9,21 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
-    {
-        Schema::create('product_variants', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('product_id')
-                ->nullable()
-                ->constrained('products')
-                ->nullOnDelete();
-            $table->string('color_name');
-            $table->string('color_code')->nullable();
-            $table->unsignedInteger('sort')->default(0);
-            $table->boolean('status')->default(true);
-            $table->timestamps();
-        });
-    }
+        public function up(): void
+        {
+            Schema::create('product_variants', function (Blueprint $table) {
+                $table->id();
+                $table->foreignId('product_id')
+                    ->nullable()
+                    ->constrained('products')
+                    ->nullOnDelete();
+                $table->string('color_name');
+                $table->string('color_code')->nullable();
+                $table->unsignedInteger('sort')->default(0);
+                $table->boolean('status')->default(true);
+                $table->timestamps();
+            });
+        }
 
     /**
      * Reverse the migrations.

@@ -35,6 +35,7 @@ return new class extends Migration
             $table->text('material_description')->nullable();
             $table->text('care_description')->nullable();
             $table->text('delivery_description')->nullable();
+            $table->text('capacity_description')->nullable();
 
             $table->boolean('is_new')->default(false);
             $table->unsignedInteger('sort')->default(0);

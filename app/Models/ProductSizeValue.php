@@ -12,7 +12,24 @@ class ProductSizeValue extends Model
         'product_id',
         'size_id',
         'dimensions',
+        'status',
+        'sort',
     ];
+
+    protected $casts = [
+        'status' => 'boolean',
+    ];
+
+    public const STATUS_ACTIVE   = 1;
+    public const STATUS_INACTIVE = 0;
+
+    public static function statusOptions(): array
+    {
+        return [
+            self::STATUS_ACTIVE   => __('app.status.active'),
+            self::STATUS_INACTIVE => __('app.status.inactive'),
+        ];
+    }
 
     public function product()
     {

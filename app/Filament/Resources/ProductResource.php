@@ -58,7 +58,6 @@ class ProductResource extends Resource
                         Forms\Components\Tabs\Tab::make(__('app.label.general'))
                             ->schema([
 
-                                // --- Общие данные ---
                                 Forms\Components\Section::make(__('app.label.general'))
                                     ->schema([
 
@@ -154,27 +153,6 @@ class ProductResource extends Resource
                                     ->columns(1),
                             ]),
 
-                        // --- Размеры ---
-                        Forms\Components\Tabs\Tab::make(__('app.label.sizes'))
-                            ->schema([
-                                Forms\Components\Repeater::make('sizeValues')
-                                    ->label(__('app.label.product_sizes'))
-                                    ->relationship('sizeValues')
-                                    ->schema([
-                                        Forms\Components\Select::make('size_id')
-                                            ->label(__('app.label.size'))
-                                            ->options(ProductSize::query()->orderBy('sort')->pluck('name', 'id'))
-                                            ->required()
-                                            ->searchable(),
-
-                                        Forms\Components\TextInput::make('dimensions')
-                                            ->label(__('app.label.dimensions'))
-                                            ->helperText('Например: 250 × 350 × 550 мм'),
-                                    ])
-                                    ->reorderable('sort')
-                                    ->collapsible(),
-                            ]),
-
                         // --- Тексты ---
                         Forms\Components\Tabs\Tab::make(__('app.label.texts'))
                             ->schema([
@@ -195,6 +173,11 @@ class ProductResource extends Resource
 
                                 Forms\Components\RichEditor::make('delivery_description')
                                     ->label(__('app.label.delivery_description'))
+                                    ->disableToolbarButtons(['attachFiles'])
+                                    ->columnSpanFull(),
+
+                                Forms\Components\RichEditor::make('capacity_description')
+                                    ->label(__('app.label.capacity_description'))
                                     ->disableToolbarButtons(['attachFiles'])
                                     ->columnSpanFull(),
 
@@ -229,37 +212,6 @@ class ProductResource extends Resource
                                     ->acceptedFileTypes(['image/png']),
                             ]),
 
-                        // --- Варианты (цвета + фото) ---
-                        Forms\Components\Tabs\Tab::make(__('app.label.variants'))
-                            ->schema([
-                                Forms\Components\Repeater::make('variants')
-                                    ->label(__('app.label.product_variants'))
-                                    ->relationship('variants')
-                                    ->schema([
-                                        Forms\Components\TextInput::make('color_name')
-                                            ->label(__('app.label.color_name'))
-                                            ->required(),
-
-                                        Forms\Components\ColorPicker::make('color_code')
-                                            ->label(__('app.label.color_code')),
-
-                                        Forms\Components\SpatieMediaLibraryFileUpload::make('variant_image')
-                                            ->collection('variant_image')
-                                            ->label(__('app.label.variant_image'))
-                                            ->image()
-                                            ->downloadable()
-                                            ->openable()
-                                            ->imageEditor()
-                                            ->imageEditorMode(3)
-                                            ->acceptedFileTypes(['image/png'])
-                                            ->optimize('png')
-                                            ->required(),
-                                    ])
-                                    ->reorderable('sort')
-                                    ->collapsible(),
-                            ]),
-
-                        // --- SEO ---
                         Forms\Components\Tabs\Tab::make('SEO')
                             ->schema([
                                 Forms\Components\TextInput::make('meta_title')
