@@ -2,6 +2,7 @@
 
 return [
     'label' => [
+        'is_external' => 'Внешняя ссылка',
         'catalog' => 'Каталог',
         'general' => 'Общие данные',
         'prices' => 'Цены и статус',

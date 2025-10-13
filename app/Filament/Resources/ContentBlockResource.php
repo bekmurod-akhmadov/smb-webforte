@@ -56,8 +56,7 @@ class ContentBlockResource extends Resource
                             ->schema([
 
                                 Forms\Components\RichEditor::make('text')
-                                    ->label(__('app.label.text'))
-                                    ->required(),
+                                    ->label(__('app.label.text')),
 
                                 Forms\Components\SpatieMediaLibraryFileUpload::make('image')
                                     ->collection('image')
@@ -83,12 +82,15 @@ class ContentBlockResource extends Resource
                                     ->unique(ignoreRecord: true),
 
                                 Forms\Components\TextInput::make('button_text')
-                                    ->label(__('app.label.button_text'))
-                                    ->required(),
+                                    ->label(__('app.label.button_text')),
 
                                 Forms\Components\TextInput::make('button_link')
                                     ->label(__('app.label.button_link'))
                                     ->required(),
+
+                                Forms\Components\Toggle::make('is_external')
+                                    ->label(__('app.label.is_external'))
+                                    ->default(false),
 
                             ]),
                     ]),

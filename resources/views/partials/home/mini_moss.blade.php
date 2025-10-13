@@ -1,7 +1,15 @@
-<a href="#" class="moni-moss" style="background-image: url('/images/mini-moss.png');">
-  <div class="container">
-    <div class="block">
-      <h2>MINI MOSS</h2>
+@if($mini_moss)
+  <a href="{{ $mini_moss->button_link }}"
+     @if($mini_moss->is_external) target="_blank" rel="noopener" @endif
+     class="moni-moss"
+     style="background-image: url('{{ $mini_moss->getFirstMediaUrl('image')}}');">
+
+    <div class="container">
+      <div class="block">
+        <h2>
+          {{$mini_moss->button_text}}
+        </h2>
+      </div>
     </div>
-  </div>
-</a>
+  </a>
+@endif

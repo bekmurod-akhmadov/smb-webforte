@@ -1,90 +1,71 @@
-<section class="handbag-gallery">
-  <div class="handbag-gallery__container container">
-    <div class="handbag-gallery__slider swiper">
-      <div class="handbag-gallery__wrapper swiper-wrapper">
-        <div class="handbag-gallery__slide swiper-slide">
-          <div class="handbag-gallery__card">
-            <div class="handbag-gallery__image">
-              <img src="/images/handbag1.png" alt="">
-            </div>
-            <div class="handbag-gallery__username">@nikname_inst</div>
-          </div>
-        </div>
+@php
+  use App\Models\HandbagGallery;
+@endphp
 
-        <div class="handbag-gallery__slide swiper-slide">
-          <div class="handbag-gallery__card">
-            <div class="handbag-gallery__image">
-              <img src="/images/handbag2.png" alt="">
-            </div>
-            <div class="handbag-gallery__username">@nikname_inst</div>
-          </div>
-        </div>
+@if($handbag_gallery->isNotEmpty())
+  <section class="handbag-gallery">
+    <div class="handbag-gallery__container container">
+      <div class="handbag-gallery__slider swiper">
+        <div class="handbag-gallery__wrapper swiper-wrapper">
 
-        <div class="handbag-gallery__slide swiper-slide">
-          <div class="handbag-gallery__card">
-            <div class="handbag-gallery__text">
-              СЛИШКОМ СМЕЛО ДЛЯ ВСЕХ,<br>
-              ИДЕАЛЬНО ДЛЯ ТЕБЯ
-            </div>
-            <div class="handbag-gallery__image">
-              <img src="/images/handbag3.png" alt="">
-            </div>
-            <div class="handbag-gallery__username">@nikname_inst</div>
-          </div>
-        </div>
+          @foreach($handbag_gallery as $item)
+            <div class="handbag-gallery__slide swiper-slide">
+              <div class="handbag-gallery__card card-style-{{ $item->style }}">
 
-        <div class="handbag-gallery__slide swiper-slide">
-          <div class="handbag-gallery__card">
-            <div class="handbag-gallery__image">
-              <img src="/images/handbag4.png" alt="">
+                {{-- Текст (для стилей ALT1 и ALT2) --}}
+                @if(!empty($item->text) && $item->style !== HandbagGallery::STYLE_DEFAULT)
+                  <div class="handbag-gallery__text">
+                    {!! nl2br(e($item->text)) !!}
+                  </div>
+                @endif
+
+                {{-- Картинка --}}
+                <div class="handbag-gallery__image">
+                  <img src="{{ $item->getFirstMediaUrl('image') ?: '/images/no-image.png' }}"
+                       alt="{{ $item->username ?? 'handbag' }}">
+                </div>
+
+                {{-- Username --}}
+                @if(!empty($item->username))
+                  <div class="handbag-gallery__username">{{ $item->username }}</div>
+                @endif
+
+              </div>
             </div>
-            <div class="handbag-gallery__username">@nikname_inst</div>
-          </div>
+          @endforeach
+
         </div>
       </div>
-    </div>
 
-    <!-- Mobile Grid -->
-    <!-- <div class="handbag-gallery__grid">
-        <div class="handbag-gallery__item">
-            <div class="handbag-gallery__card">
-                <div class="handbag-gallery__image">
-                    <img src="/images/handbag1.png" alt="">
-                </div>
-                <div class="handbag-gallery__username">@nikname_inst</div>
-            </div>
-        </div>
+      {{-- Mobile Grid --}}
+      <div class="handbag-gallery__grid">
+        @foreach($handbag_gallery as $item)
+          <div class="handbag-gallery__item">
+            <div class="handbag-gallery__card style-{{ $item->style }}">
 
-        <div class="handbag-gallery__item">
-            <div class="handbag-gallery__card">
-                <div class="handbag-gallery__image">
-                    <img src="/images/handbag2.png" alt="">
-                </div>
-                <div class="handbag-gallery__username">@nikname_inst</div>
-            </div>
-        </div>
+              {{-- Картинка --}}
+              <div class="handbag-gallery__image">
+                <img src="{{ $item->getFirstMediaUrl('image') ?: '/images/no-image.png' }}"
+                     alt="{{ $item->username ?? 'handbag' }}">
+              </div>
 
-        <div class="handbag-gallery__item">
-            <div class="handbag-gallery__card">
-                <div class="handbag-gallery__image">
-                    <img src="/images/handbag3.png" alt="">
-                </div>
+              {{-- Текст (если есть) --}}
+              @if(!empty($item->text) && $item->style !== HandbagGallery::STYLE_DEFAULT)
                 <div class="handbag-gallery__text">
-                    СЛИШКОМ СМЕЛО ДЛЯ ВСЕХ,<br>
-                    ИДЕАЛЬНО ДЛЯ ТЕБЯ
+                  {!! nl2br(e($item->text)) !!}
                 </div>
-                <div class="handbag-gallery__username">@nikname_inst</div>
-            </div>
-        </div>
+              @endif
 
-        <div class="handbag-gallery__item">
-            <div class="handbag-gallery__card">
-                <div class="handbag-gallery__image">
-                    <img src="/images/handbag4.png" alt="">
-                </div>
-                <div class="handbag-gallery__username">@nikname_inst</div>
+              {{-- Username --}}
+              @if(!empty($item->username))
+                <div class="handbag-gallery__username">{{ $item->username }}</div>
+              @endif
+
             </div>
-        </div>
-    </div> -->
-  </div>
-</section>
+          </div>
+        @endforeach
+      </div>
+
+    </div>
+  </section>
+@endif

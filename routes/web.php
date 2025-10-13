@@ -39,6 +39,9 @@ Route::group(
         Route::get('/{category:slug}/{subcategory:slug}/{product:slug}', [ProductController::class, 'show'])
             ->name('product.show');
 
+        Route::get('/product/{product:slug}', [ProductController::class, 'redirectToFull'])
+            ->name('product.short');
+
 
     }
 );

@@ -14,7 +14,7 @@
 
   @if(setting('blocks.home.collection'))
 
-    @include('partials.home.collection')
+    @include('partials.home.collection', ['products' => $products])
 
   @endif
 
@@ -26,13 +26,13 @@
 
   @if(setting('blocks.home.mini_moss'))
 
-    @include('partials.home.mini_moss')
+    @include('partials.home.mini_moss', ['mini_moss' => $mini_moss])
 
   @endif
 
   @if(setting('blocks.home.handbag_gallery'))
 
-    @include('partials.home.handbag')
+    @include('partials.home.handbag', ['handbag_gallery' => $handbag_gallery])
 
   @endif
 
@@ -42,7 +42,7 @@
 
   @if(setting('blocks.home.collection_2'))
 
-    @include('partials.home.collection_2')
+    @include('partials.home.collection_2', ['new_products' => $new_products])
 
   @endif
 

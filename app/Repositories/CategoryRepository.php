@@ -11,11 +11,23 @@ class CategoryRepository
         return Category::where('slug', $slug)->first();
     }
 
-    public function getWithSubcategoriesAndProducts(Category $category)
+    public function getWithSubcategoriesAndProducts(Category $category): array
     {
         return [
-            'subcategories' => $category->subcategories,
-            'products' => $category->products,
+            'subcategories' => $category->subcategories()
+                ->where('status', 1)
+                ->orderBy('sort')
+                ->get(),
+
+            'products' => $category->products()
+                ->active()
+                ->with([
+                    'variants' => fn($q) => $q->where('status', 1),
+                    'sizeValues' => fn($q) => $q->where('status', 1)->with('size'),
+                    'media',
+                ])
+                ->orderBy('sort')
+                ->get(),
         ];
     }
 }

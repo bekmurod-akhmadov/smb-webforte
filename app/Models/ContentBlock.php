@@ -21,10 +21,12 @@ class ContentBlock extends Model implements HasMedia
         'text',
         'button_text',
         'button_link',
+        'is_external',
     ];
 
     protected $casts = [
         'status' => 'boolean',
+        'is_external',
     ];
 
     /** ───── Media ───── */

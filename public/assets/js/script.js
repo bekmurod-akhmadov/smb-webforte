@@ -201,14 +201,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-const children = document.querySelectorAll(".handbag-gallery__card");
-
-// 1-chi, 2-chi, 3-chi ga style-0, style-1, style-2
-children.forEach((child, index) => {
-  const styleIndex = index % 3; // 0,1,2,0,1,2...
-  child.classList.add(`style-${styleIndex}`);
-});
-
 // ==================== COOKIE POPUP FUNCTIONS ====================
 function initCookiePopup() {
   const cookiePopup = document.getElementById("cookiePopup");
