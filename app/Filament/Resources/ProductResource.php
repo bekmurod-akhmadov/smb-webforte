@@ -153,6 +153,77 @@ class ProductResource extends Resource
                                     ->columns(1),
                             ]),
 
+                        Forms\Components\Tabs\Tab::make(__('app.label.sizes'))
+                            ->schema([
+                                Forms\Components\Repeater::make('sizeValues')
+                                    ->label(__('app.label.sizes'))
+                                    ->relationship('sizeValues') // связь в модели Product
+                                    ->schema([
+                                        Forms\Components\Select::make('size_id')
+                                            ->label(__('app.label.size'))
+                                            ->options(\App\Models\ProductSize::pluck('name', 'id'))
+                                            ->searchable()
+                                            ->required(),
+
+                                        Forms\Components\TextInput::make('dimensions')
+                                            ->label(__('app.label.dimensions'))
+                                            ->maxLength(128),
+
+                                        Forms\Components\Toggle::make('status')
+                                            ->label(__('app.label.status'))
+                                            ->default(true),
+
+                                        Forms\Components\TextInput::make('sort')
+                                            ->label(__('app.label.sort'))
+                                            ->numeric()
+                                            ->default(0),
+                                    ])
+                                    ->default([])
+                                    ->orderable('sort')
+                                    ->collapsible()
+                                    ->columnSpanFull(),
+                            ]),
+
+                        // --- Variants ---
+                        Forms\Components\Tabs\Tab::make(__('app.label.variants'))
+                            ->schema([
+                                Forms\Components\Repeater::make('variants')
+                                    ->label(__('app.label.variants'))
+                                    ->relationship('variants') // связь в модели Product
+                                    ->schema([
+                                        Forms\Components\TextInput::make('color_name')
+                                            ->label(__('app.label.color_name'))
+                                            ->required(),
+
+                                        Forms\Components\ColorPicker::make('color_code')
+                                            ->label(__('app.label.color_code')),
+
+                                        Forms\Components\SpatieMediaLibraryFileUpload::make('variant_image')
+                                            ->collection('variant_image')
+                                            ->label(__('app.label.variant_image'))
+                                            ->image()
+                                            ->downloadable()
+                                            ->openable()
+                                            ->imageEditor()
+                                            ->imageEditorMode(3)
+                                            ->acceptedFileTypes(['image/png', 'image/jpeg'])
+                                            ->required(),
+
+                                        Forms\Components\Toggle::make('status')
+                                            ->label(__('app.label.status'))
+                                            ->default(true),
+
+                                        Forms\Components\TextInput::make('sort')
+                                            ->label(__('app.label.sort'))
+                                            ->numeric()
+                                            ->default(0),
+                                    ])
+                                    ->default([])
+                                    ->orderable('sort')
+                                    ->collapsible()
+                                    ->columnSpanFull(),
+                            ]),
+
                         // --- Тексты ---
                         Forms\Components\Tabs\Tab::make(__('app.label.texts'))
                             ->schema([
