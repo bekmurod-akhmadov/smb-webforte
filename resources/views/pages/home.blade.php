@@ -6,7 +6,7 @@
 
   <x-marquee />
 
-  <x-header/>
+  <x-header />
 
   @if (setting('blocks.home.hero'))
     @include('partials.home.hero', ['hero_slider' => $hero_slider])
@@ -14,7 +14,7 @@
 
   @if(setting('blocks.home.collection'))
 
-    @include('partials.home.collection', ['products' => $products])
+    @include('partials.home.collection', ['new_products' => $new_products])
 
   @endif
 
@@ -26,7 +26,7 @@
 
   @if(setting('blocks.home.mini_moss'))
 
-    @include('partials.home.mini_moss', ['mini_moss' => $mini_moss])
+    @include('partials.mini_moss', ['mini_moss' => $mini_moss])
 
   @endif
 
@@ -42,7 +42,7 @@
 
   @if(setting('blocks.home.collection_2'))
 
-    @include('partials.home.collection_2', ['new_products' => $new_products])
+    @include('partials.home.collection_2', ['products' => $products])
 
   @endif
 
@@ -52,9 +52,9 @@
 
   @if(setting('blocks.home.newsletter'))
 
-    @include('partials.home.newsletter')
+    @include('partials.newsletter')
 
   @endif
 
-  <x-footer/>
+  <x-footer />
 @endsection

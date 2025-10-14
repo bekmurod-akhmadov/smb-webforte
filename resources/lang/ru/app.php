@@ -2,12 +2,15 @@
 
 return [
     'label' => [
+        'collection_all' => 'Все коллекции',
+        'page_catalog' => 'Каталог',
+        'delivery' => 'Доставка',
         'is_external' => 'Внешняя ссылка',
         'catalog' => 'Каталог',
         'general' => 'Общие данные',
         'prices' => 'Цены и статус',
         'old_price' => 'Старая цена',
-        'is_new' => 'Новинка',
+        'is_new' => 'Новая коллекция',
         'sizes' => 'Размеры',
         'product_sizes' => 'Размеры товара',
         'size' => 'Размер',
@@ -27,6 +30,7 @@ return [
         'seo' => 'SEO',
         'meta_title' => 'Мета-заголовок',
         'meta_description' => 'Мета-описание',
+        'capacity_description' => 'Описание вместимости',
 
 
         'product_material_single' => 'Материал',

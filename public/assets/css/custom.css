@@ -3,3 +3,16 @@
   align-items: center;
   justify-content: center;
 }
+.collection-section.catalog__grid .products-grid {
+  gap: 60px 4px;
+}
+
+.deliver .block .box .delivery__button{
+  padding: 12px 12px !important;
+  background-color: #fff;
+  color: #000;
+  width: 120px !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}

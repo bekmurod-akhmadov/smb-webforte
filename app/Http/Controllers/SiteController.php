@@ -55,4 +55,9 @@ class SiteController extends Controller
     {
         return view('pages.search');
     }
+
+    public function favourites()
+    {
+        return view('pages.favourites');
+    }
 }

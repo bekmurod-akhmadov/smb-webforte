@@ -18,6 +18,7 @@ class ContentBlock extends Model implements HasMedia
 
     protected $fillable = [
         'key',
+        'title',
         'text',
         'button_text',
         'button_link',

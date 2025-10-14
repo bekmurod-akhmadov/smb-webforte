@@ -29,6 +29,7 @@ Route::group(
         Route::get('/', [SiteController::class, 'index'])->name('home');
         Route::get('/about', [SiteController::class, 'about'])->name('about');
         Route::get('/search', [SiteController::class, 'search'])->name('search');
+        Route::get('/favourites', [SiteController::class, 'favourites'])->name('favourites');
 
         Route::get('/{category:slug}', [CategoryController::class, 'show'])
             ->name('category.show');

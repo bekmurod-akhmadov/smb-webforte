@@ -144,7 +144,7 @@ class ProductResource extends Resource
                                                             ->label(__('app.label.status'))
                                                             ->default(true),
 
-                                                        Forms\Components\Toggle::make('is_new')
+                                                        Forms\Components\Toggle::make('is_new_collection')
                                                             ->label(__('app.label.is_new'))
                                                             ->default(false),
                                                     ]),

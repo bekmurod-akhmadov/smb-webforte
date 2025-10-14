@@ -8,7 +8,7 @@
 
   <x-header />
 
-  @include('partials.filter_section', ['subcategories' => $subcategories])
+{{--  @include('partials.filter_section', ['subcategories' => $subcategories])--}}
 
   <section class="hero-slider">
     <div class="swiper heroSwiper">
@@ -1222,14 +1222,7 @@
     </div>
   </section>
 
-  <section class="smb-newsletter-section">
-    <div class="smb-newsletter-container">
-      <h1 class="smb-newsletter-title">СЕКРЕТ SMB Магазин</h1>
-      <p class="smb-newsletter-description">Секретные скидки, еженедельные новости,</p>
-      <p class="smb-newsletter-description">письма от основателя бренда</p>
-      <button class="smb-subscribe-btn" id="smbSubscribeBtn">ПОДПИСАТЬСЯ</button>
-    </div>
-  </section>
+  @include('partials.newsletter')
 
   <x-footer />
 

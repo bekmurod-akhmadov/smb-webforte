@@ -1,10 +1,10 @@
-@if($products->isNotEmpty())
+@if($new_products->isNotEmpty())
   <section class="collection-section">
     <div class="container">
       <h2 class="section-title">НОВАЯ КОЛЛЕКЦИЯ</h2>
 
       <div class="products-grid">
-        @forelse($products as $product)
+        @forelse($new_products as $product)
           <div class="product-card">
             <a href="{{ route('product.show', [
               'category'    => $product->category->slug,

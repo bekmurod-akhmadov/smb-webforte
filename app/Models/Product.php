@@ -24,7 +24,7 @@ class Product extends Model implements HasMedia
         'care_description',
         'delivery_description',
         'capacity_description',
-        'is_new',
+        'is_new_collection',
         'sort',
         'status',
         'meta_title',
@@ -33,7 +33,7 @@ class Product extends Model implements HasMedia
 
     protected $casts = [
         'status'   => 'boolean',
-        'is_new'   => 'boolean',
+        'is_new_collection'   => 'boolean',
         'price'    => 'decimal:2',
         'old_price'=> 'decimal:2',
     ];
@@ -71,7 +71,7 @@ class Product extends Model implements HasMedia
 
     public function scopeNewActive($query)
     {
-        return $query->where('is_new', true)
+        return $query->where('is_new_collection', true)
             ->where('status', 1)
             ->where(function ($q) {
                 $q->whereHas('variants', fn($sub) => $sub->where('status', 1))
@@ -102,4 +102,24 @@ class Product extends Model implements HasMedia
             ->pluck('name', 'id')
             ->toArray();
     }
+
+    public function scopeNewProducts($query)
+    {
+        return $query->where('status', 1)
+            ->where(function ($q) {
+                $q->whereHas('variants', fn($sub) => $sub->where('status', 1))
+                    ->orWhereHas('sizeValues', fn($sub) => $sub->where('status', 1));
+            });
+    }
+
+    public function scopeNewCollection($query)
+    {
+        return $query->where('is_new_collection', true)
+            ->where('status', 1)
+            ->where(function ($q) {
+                $q->whereHas('variants', fn($sub) => $sub->where('status', 1))
+                    ->orWhereHas('sizeValues', fn($sub) => $sub->where('status', 1));
+            });
+    }
+
 }

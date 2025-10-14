@@ -55,6 +55,10 @@ class ContentBlockResource extends Resource
                             ->columnSpan(1)
                             ->schema([
 
+                                Forms\Components\RichEditor::make('title')
+                                    ->label(__('app.label.title'))
+                                    ->required(),
+
                                 Forms\Components\RichEditor::make('text')
                                     ->label(__('app.label.text')),
 

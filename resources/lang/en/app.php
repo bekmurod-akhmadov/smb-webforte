@@ -2,12 +2,15 @@
 
 return [
     'label' => [
+        'collection_all' => 'All collection',
+        'page_catalog' => 'Catalog',
+        'delivery' => 'Delivery',
         'is_external' => 'External link',
         'catalog' => 'Catalog',
         'general' => 'General',
         'prices' => 'Prices & Status',
         'old_price' => 'Old Price',
-        'is_new' => 'New Arrival',
+        'is_new' => 'New Collection',
         'sizes' => 'Sizes',
         'product_sizes' => 'Product Sizes',
         'size' => 'Size',
@@ -27,6 +30,7 @@ return [
         'seo' => 'SEO',
         'meta_title' => 'Meta Title',
         'meta_description' => 'Meta Description',
+        'capacity_description' => 'Capacity description',
 
 
 

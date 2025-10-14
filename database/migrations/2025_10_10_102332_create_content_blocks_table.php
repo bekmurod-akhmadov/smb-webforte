@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('content_blocks', function (Blueprint $table) {
             $table->id();
             $table->string('key')->unique();
+            $table->string('title')->nullable();
             $table->text('text')->nullable();
             $table->string('button_text')->nullable();
             $table->string('button_link')->nullable();

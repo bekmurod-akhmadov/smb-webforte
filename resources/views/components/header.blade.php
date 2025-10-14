@@ -47,10 +47,10 @@
           <img src="/images/user_icon.svg" alt="search">
         </a>
         <!-- Mobile Actions -->
-        <a href="search.html" class="action-btn search-btn d-lg-none">
+        <a href="{{route('search')}}" class="action-btn search-btn d-lg-none">
           <img src="/images/search_icon.svg" alt="search">
         </a>
-        <a href="favorites.html" class="action-btn wishlist-btn d-lg-none">
+        <a href="{{route('favourites')}}" class="action-btn wishlist-btn d-lg-none">
           <img src="/images/favourite_icon.svg" alt="search">
         </a>
         <a onclick="buyerModal()" class="action-btn cart-btn d-lg-none">

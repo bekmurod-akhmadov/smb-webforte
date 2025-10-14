@@ -43,7 +43,6 @@ class PageBlocks extends BaseSettings
                         ]),
 
                     /** Главная */
-                    /** Главная */
                     Forms\Components\Tabs\Tab::make(__('app.label.page_home'))
                         ->schema([
 
@@ -96,6 +95,31 @@ class PageBlocks extends BaseSettings
                                 ->default(true),
 
                             Forms\Components\Toggle::make('blocks.home.newsletter')
+                                ->label(__('app.label.newsletter'))
+                                ->default(true),
+                        ]),
+
+                    /** Каталог */
+                    Forms\Components\Tabs\Tab::make(__('app.label.page_catalog'))
+                        ->schema([
+
+                            Forms\Components\Toggle::make('blocks.catalog.collection')
+                                ->label(__('app.label.block_collection'))
+                                ->default(true),
+
+                            Forms\Components\Toggle::make('blocks.catalog.delivery')
+                                ->label(__('app.label.delivery'))
+                                ->default(true),
+
+                            Forms\Components\Toggle::make('blocks.catalog.mini_moss')
+                                ->label(__('app.label.block_mini_moss'))
+                                ->default(true),
+
+                            Forms\Components\Toggle::make('blocks.catalog.collection_all')
+                                ->label(__('app.label.collection_all'))
+                                ->default(true),
+
+                            Forms\Components\Toggle::make('blocks.catalog.newsletter')
                                 ->label(__('app.label.newsletter'))
                                 ->default(true),
                         ]),
