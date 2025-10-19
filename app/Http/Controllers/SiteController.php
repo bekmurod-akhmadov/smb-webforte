@@ -60,4 +60,13 @@ class SiteController extends Controller
     {
         return view('pages.favourites');
     }
+
+    public function contact()
+    {
+        return view('pages.contact');
+    }
+
+    public function rule(){
+        return view('pages.rule');
+    }
 }

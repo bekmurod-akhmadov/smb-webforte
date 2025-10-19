@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SiteController;
 use App\Http\Controllers\SubCategoryController;
@@ -30,6 +31,12 @@ Route::group(
         Route::get('/about', [SiteController::class, 'about'])->name('about');
         Route::get('/search', [SiteController::class, 'search'])->name('search');
         Route::get('/favourites', [SiteController::class, 'favourites'])->name('favourites');
+        Route::get('/contact', [SiteController::class, 'contact'])->name('contact');
+        Route::get('/rule', [SiteController::class, 'rule'])->name('rule');
+
+        // News routes
+        Route::get('/news', [NewsController::class, 'index'])->name('news.index');
+        Route::get('/news/{id}', [NewsController::class, 'show'])->name('news.show');
 
         Route::get('/{category:slug}', [CategoryController::class, 'show'])
             ->name('category.show');

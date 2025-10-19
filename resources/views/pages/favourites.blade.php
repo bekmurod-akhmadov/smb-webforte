@@ -38,7 +38,7 @@
       </button>
       <!-- Left Navigation -->
       <div class="navbar-left d-none d-lg-flex">
-        <a href="about.html" class="nav-link">О НАС
+        <a  class="nav-link">О НАС
         </a>
         <a href="catalog.html" class="nav-link">ЖЕНЩИНА</a>
         <a href="catalog.html" class="nav-link">МУЖЧИНА</a>
